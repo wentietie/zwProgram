@@ -1,0 +1,102 @@
+
+.eachBtn{
+	width: auto;
+	padding: 10rpx 30rpx;
+	color: #BFBFBF;
+	font-size: 30rpx;
+	border-radius: 50rpx;
+	border: 3rpx solid #BFBFBF;
+	float: right;
+	margin-right: 30rpx;
+}
+.bottomBtn{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 240rpx;
+}
+.topInfo{
+	width: 100%;
+	position: relative;
+}
+.topInfo image{
+	width: 200rpx;
+	height: 200rpx;
+	border-radius: 15rpx;
+	position: absolute;
+	top: 10rpx;
+	left: 20rpx;
+}
+.rightInfo{
+	width: 430rpx;
+	position: absolute;
+	top: 10rpx;
+	left: 240rpx;
+}
+.title{
+	width: 100%;
+	font-size: 30rpx;
+	line-height: 40rpx;
+	height: 80rpx;
+	font-weight: 700;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.price{
+	font-size: 25rpx;
+	margin-top: 10rpx;
+	color: #BFBFBF;
+}
+.midInfo{
+	width: 100%;
+	font-size: 25rpx;
+	color: #bfbfbf;
+}
+.bottom{
+	width: 100%;
+}
+.notSaling{
+	width: 100%;
+}
+.eachGoods{
+	width: 100%;
+	margin-top: 30rpx;
+	position: relative;
+	padding: 20rpx 0;
+}
+.topRight{
+	width: 100rpx;
+	height: 100rpx;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #fbb600;
+	font-size: 20rpx;
+	/* text-align: center; */
+	color: white;
+	-webkit-clip-path: polygon(0 0, 100rpx 100rpx, 100rpx 100rpx, 100rpx 0);
+	        clip-path: polygon(0 0, 100rpx 100rpx, 100rpx 100rpx, 100rpx 0);
+}
+.holePage{
+	width: 100%;
+}
+.topTab{
+	width: 60%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.eachTab{
+	width: 50%;
+	float: left;
+	border-radius: 40rpx;
+	line-height: 70rpx;
+	text-align: center;
+	color: #EDCA8D;
+	font-size: 30rpx;
+}
+.chooseCurTab{
+	background-color: #EDCA8D;
+	color: white;
+}
+

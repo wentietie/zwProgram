@@ -1,0 +1,49 @@
+
+.holePage{
+	width: 100%;
+	padding-top: 5rpx;
+}
+.eachFund{
+	width: 92%;
+	margin: 0 auto;
+	margin-top: 50rpx;
+	position: relative;
+}
+.eachFund image{
+	width: 80rpx;
+	height: 80rpx;
+	position: absolute;
+	top: 0rpx;
+	left: 0;
+	border-radius: 50rpx;
+}
+.rightInfo{
+	margin-left: 100rpx;
+	overflow: hidden;
+	padding-bottom: 30rpx;
+	border-bottom: 1rpx solid #BFBFBF;
+}
+.title{
+	width: 70%;
+	float: left;
+	font-size: 35rpx;
+	font-weight: 600;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.date{
+	width: 70%;
+	float: left;
+	margin-top: 20rpx;
+	font-size: 25rpx;
+	color: #BFBFBF;
+}
+.price{
+	width: 30%;
+	float: right;
+	text-align: right;
+	font-size: 30rpx;
+	margin-top: 15rpx;
+}
+

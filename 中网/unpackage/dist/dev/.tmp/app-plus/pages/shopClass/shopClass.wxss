@@ -1,0 +1,154 @@
+
+.eachGoods text {
+	/* width: 100%; */
+	font-size: 25rpx;
+	color: #C0C0C0;
+}
+.topInfoImg {
+	width: 100rpx;
+	margin: 0 auto;
+	height: 150rpx;
+}
+.topInfoImg image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.eachGoods {
+	width: 200rpx;
+	float: left;
+	text-align: center;
+	/* margin: 20upx 0; */
+	margin-top: 40rpx;
+}
+.conInfo {
+	width: 100%;
+	overflow: hidden;
+}
+.rigthMore text {
+	float: right;
+	margin-right: 10rpx;
+}
+.rigthMore image {
+	width: 25rpx;
+	height: 25rpx;
+	float: right;
+	margin-top: 8rpx;
+}
+.rigthMore {
+	float: right;
+	color: #e6e6e6;
+	font-size: 25rpx;
+	overflow: hidden;
+}
+.leftLabel {
+	float: left;
+	font-size: 30rpx;
+	font-weight: 550;
+}
+.conTop {
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1rpx solid #C8C7CC;
+	overflow: hidden;
+	padding-bottom: 10rpx;
+}
+.rightContent {
+	width: 600rpx;
+	float: right;
+	/* background-color: #007AFF; */
+}
+.textDis {
+	width: 145rpx;
+	float: right;
+	color: #333333;
+	text-align: center;
+	margin-top: 25rpx;
+}
+.selBig {
+	background-color: white;
+}
+.selTCla {
+	border-left: 10rpx solid orange;
+	color: orange;
+}
+.eachTab {
+	width: 100%;
+	height: 100rpx;
+	color: #e6e6e6;
+}
+.leftTab {
+	width: 150rpx;
+	background-color: #e6e6e6;
+	/* height: 100upx; */
+	float: left;
+	font-size: 30rpx;
+}
+.contentView {
+	width: 100%;
+	margin-top: 40rpx;
+	overflow: hidden;
+}
+.topView {
+	width: 95%;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 80rpx;
+}
+.leftScanIcon {
+	width: 40rpx;
+	height: 40rpx;
+	float: left;
+	margin-top: 8rpx;
+}
+.leftScanIcon image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.topMiddleInput {
+	width: 550rpx;
+	height: 50rpx;
+	float: left;
+	margin-left: 20rpx;
+	overflow: hidden;
+	border: 1rpx solid #EEEEEE;
+	border-radius: 50rpx;
+}
+.midRightIcon {
+	width: 100rpx;
+	line-height: 50rpx;
+	float: left;
+	/* margin-left: 40upx; */
+	font-size: 25rpx;
+	text-align: center;
+}
+.midRightIcon image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.midLeftIcon {
+	width: 30rpx;
+	height: 30rpx;
+	float: left;
+	margin-left: 20rpx;
+	margin-top: 13rpx;
+}
+.midLeftIcon image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.midRigthInput {
+	width: 490rpx;
+	float: left;
+	margin-left: 10rpx;
+	height: 50rpx;
+	font-size: 25rpx;
+}
+.midRigthInput input {
+	font-size: 25rpx;
+	height: 100%;
+}
+

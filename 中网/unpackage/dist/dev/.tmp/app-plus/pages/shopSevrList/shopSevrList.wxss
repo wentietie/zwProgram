@@ -1,0 +1,166 @@
+
+.rigthInput{
+	width: 380rpx;
+	margin-left: 0;
+	float: left;
+	height: 100%;
+}
+.rigthInput input{
+	width: 100%;
+	height: 100%;
+	font-size: 35rpx;
+}
+.location{
+	width: 150rpx;
+	float: left;
+	margin-left: 0;
+	font-size: 30rpx;
+	color: #c1c0be;
+}
+.location text{
+	float: left;
+	margin-left: 20rpx;
+}
+.location image{
+	width: 30rpx;
+	height: 30rpx;
+	float: left;
+	margin-left: 10rpx;
+	margin-top: 30rpx;
+}
+.inputView{
+	width: 80%;
+	height: 80rpx;
+	margin-top: 50rpx;
+	background-color: #f4f4f4;
+	margin-left: 20rpx;
+	border-radius: 10rpx;
+	float: left;
+	line-height: 80rpx;
+}
+.pageTop{
+	width: 100%;
+	height: 150rpx;
+	background-color: #FFFFFF;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.topImg{
+	width: 70rpx;
+	height: 70rpx;
+	float: left;
+	border-radius: 100rpx;
+	margin-left: 30rpx;
+	overflow: hidden;
+	margin-top: 55rpx;
+}
+.topImg image{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.shopName{
+	font-size: 35rpx;
+	font-weight: 700;
+}
+.shopType{
+	font-size: 25rpx;
+	color: #BFBFBF;
+	margin-top: 20rpx;
+}
+.eachShop{
+	width: 90%;
+	border-radius: 20rpx;
+	margin: 20rpx auto;
+	overflow: hidden;
+	padding: 20rpx 0;
+	position: relative;
+	background-color: #FFFFFF;
+}
+.distance{
+	position: absolute;
+	font-size: 25rpx;
+	right: 20rpx;
+	top: 80rpx;
+	color: #EDCA8D;
+}
+.eachShop image{
+	width: 150rpx;
+	height: 150rpx;
+	float: left;
+	display: block;
+	margin-left: 20rpx;
+}
+.midInfo{
+	width: 450rpx;
+	float: left;
+	margin-left: 20rpx;
+}
+.bottom{
+	width: 100%;
+	padding-top: 10rpx;
+}
+.eachTabLeft{
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+.eachTabLeft image{
+	width: 25rpx;
+	height: 25rpx;
+	position: absolute;
+	left: 60rpx;
+	top: 10rpx;
+}
+.eachTabMid{
+	width: 33.33%;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+.eachTabMid image{
+	width: 25rpx;
+	height: 25rpx;
+	position: absolute;
+	left: 145rpx;
+	top: 10rpx;
+}
+.eachTabRight{
+	width: 33.33%;
+	float: left;
+	position: relative;
+	text-align: right;
+}
+.eachTabRight image{
+	width: 25rpx;
+	height: 25rpx;
+	position: absolute;
+	right: 0rpx;
+	top: 10rpx;
+}
+.MidTab{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 40rpx;
+	overflow: hidden;
+	font-size: 30rpx;
+}
+.holePage{
+	width: 100%;
+	padding-top: 50rpx;
+	background-color: #EEEEEE;
+	padding-bottom: 40rpx;
+}
+.topSwiper{
+	width: 100%;
+	height: 300rpx;
+	margin-top: 140rpx;
+}
+.topSwiper image{
+	width: 90%;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+}
+

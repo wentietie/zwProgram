@@ -1,0 +1,82 @@
+
+.registerText {
+	position: fixed;
+	top: 50rpx;
+	width: 730rpx;
+	font-size: 30rpx;
+	text-align: right;
+	z-index: 100000000;
+}
+.registerNow {
+	width: 100%;
+	text-align: center;
+	font-size: 25rpx;
+	margin-top: 100rpx;
+	color: #A5A5A5;
+}
+.wxIcon {
+	width: 120rpx;
+	height: 120rpx;
+	margin: 0 auto;
+}
+.wxIcon image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.forgetPwd {
+	float: right;
+	color: #D2D2D2;
+}
+.phoneLogin {
+	float: left;
+	color: #FAC883;
+}
+.loginBottom {
+	width: 95%;
+	overflow: hidden;
+	font-size: 25rpx;
+	margin: 20rpx auto;
+}
+.loginNow {
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 100rpx;
+	font-size: 30rpx;
+	color: white;
+	text-align: center;
+	line-height: 100rpx;
+	background-color: #EFD0A1;
+	border-radius: 8rpx;
+}
+.countName {
+	width: 100%;
+	border-bottom: 1rpx solid #F1F1F1;
+	height: 100rpx;
+}
+.countName input {
+	height: 100rpx;
+	font-size: 30rpx;
+}
+.inputView {
+	width: 95%;
+	margin: 40rpx auto;
+}
+.content {
+	width: 100%;
+	padding-top: 1rpx;
+}
+.registerLogo {
+	width: 110rpx;
+	height: 110rpx;
+	margin: 0 auto;
+	margin-top: 180rpx;
+	border-radius: 20rpx;
+	overflow: hidden;
+}
+.registerLogo image {
+	width: 110rpx;
+	height: 110rpx;
+	display: block;
+}
+

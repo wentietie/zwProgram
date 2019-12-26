@@ -1,0 +1,135 @@
+
+.payNow{
+	width: 95%;
+	line-height: 100rpx;
+	margin: 50rpx auto;
+	/* margin-top: ; */
+	color: #ffffff;
+	text-align: center;
+	background-color: #edca8d;
+	border-radius: 15rpx;
+}
+.eachType{
+	width: 100%;
+	position: relative;
+	padding: 20rpx 0;
+	/* border-top: 1upx solid #000000; */
+	border-top: 1rpx solid #fbfbfb;
+	margin-top: 10rpx;
+	height: 100rpx;
+}
+.tickView{
+	width: 40rpx;
+	height: 40rpx;
+	position: absolute;
+	right: 30rpx;
+	top: 45rpx;
+	background-color: #f0f0f0;
+	border-radius: 30rpx;
+}
+.tickView image{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.bgChange{
+	background-color: #00c800;
+}
+.eachType .leftIcon{
+	width: 80rpx;
+	height: 80rpx;
+	position: absolute;
+	top: 30rpx;
+	left: 20rpx;
+}
+.eachType .leftIcon image{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.eachType text{
+	font-size: 30rpx;
+	font-weight: 600;
+	position: absolute;
+	left: 120rpx;
+	top: 45rpx;
+}
+.topView{
+	width: 100%;
+	font-size: 35rpx;
+	font-weight: 700;
+	line-height: 80rpx;
+}
+.payType{
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 20rpx;
+}
+.stuffView{
+	width: 100%;
+	height: 15rpx;
+	background-color: #efefef;
+}
+.vipCardInfo{
+	width: 100%;
+	overflow: hidden;
+}
+.vipCardInfo .left{
+	/* width: ; */
+	float: left;
+	margin-left: 20rpx;
+	font-size: 30rpx;
+	font-weight: 700;
+	line-height: 100rpx;
+}
+.vipCardInfo .right {
+	float: right;
+	margin-right: 20rpx;
+	position: relative;
+}
+.vipCardInfo .right image{
+	width: 30rpx;
+	height: 30rpx;
+	position: absolute;
+	right: 0;
+	top: 40rpx;
+}
+.vipCardInfo .right text{
+	line-height: 100rpx;
+	font-size: 25rpx;
+	color: #a7a7a7;
+	margin-right: 30rpx;
+}
+.holePage{
+	width: 100%;
+}
+.topImg{
+	width: 100%;
+	height: 500rpx;
+	padding-top: 50rpx;
+	background-color: #2a2c34;
+	text-align: center;
+	color: white;
+	font-size: 35rpx;
+}
+.topImg image{
+	width: 650rpx;
+	height: 330rpx;
+	margin: 0 auto;
+	margin-top: 60rpx;
+}
+.goBack {
+	position: fixed;
+	width: 40rpx;
+	height: 40rpx;
+	/*float: left; 
+	margin-top: 8upx; */
+	left: 30rpx;
+	top: 60rpx;
+}
+.goBack image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+

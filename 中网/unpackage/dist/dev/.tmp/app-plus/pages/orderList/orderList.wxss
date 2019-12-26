@@ -1,0 +1,58 @@
+
+.holePage{
+	width: 100%;
+}
+.eachOrder{
+	width: 92%;
+	margin: 0 auto;
+	margin-top: 60rpx;
+	overflow: hidden;
+}
+.leftView{
+	width: 75%;
+	float: left;
+	border-right: 1rpx solid #e8e8e8;
+}
+.goodsTitle{
+	width: 80%;
+	font-size: 35rpx;
+	line-height: 40rpx;
+	height: 80rpx;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+.date{
+	width: 100%;
+	font-size: 25rpx;
+	color: #b2b2b2;
+	margin-top: 10rpx;
+}
+.orderNum{
+	font-size: 25rpx;
+	color: #EDCA8D;
+}
+.rightView{
+	width: 24.5%;
+	position: relative;
+	text-align: center;
+	float: right;
+	height: 100%;
+}
+.top{
+	font-size: 30rpx;
+}
+.payStatus{
+	width: 60%;
+	position: absolute;
+	left: 20%;
+	/* bottom: 5upx; */
+	top: 100rpx;
+	color: #EDCA8D;
+	border-radius: 30rpx;
+	font-size: 25rpx;
+	line-height: 50rpx;
+	border: 2rpx solid #EDCA8D;
+}
+

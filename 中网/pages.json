@@ -1,0 +1,147 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/shopClass/shopClass",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/cardRecharge/cardRecharge",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/becomeJJR/becomeJJR",
+			"style": {
+				"navigationBarTitleText": "成为经纪人"
+			}
+		}
+	    ,{
+            "path" : "pages/minePage/minePage",
+            "style" : {
+				"navigationStyle": "custom",
+				"navigationBarTextStyle":"white"
+			}
+        }
+        ,{
+            "path" : "pages/orderList/orderList",
+            "style" : {
+				
+			}
+        }
+        ,{
+            "path" : "pages/shopHome/shopHome",
+            "style" : {
+				"navigationStyle": "custom"
+			}
+        }
+        ,{
+            "path" : "pages/vipList/vipList",
+            "style" : {
+				"navigationStyle": "custom"
+			}
+        }
+        ,{
+            "path" : "pages/vipDetail/vipDetail",
+            "style" : {
+				"navigationBarBackgroundColor":"#000000",
+				"navigationBarTextStyle":"white"
+			}
+        }
+        ,{
+            "path" : "pages/productMag/productMag",
+            "style" : {
+				"navigationBarTitleText":"产品管理"
+			}
+        }
+        ,{
+            "path" : "pages/addGoods/addGoods",
+            "style" : {
+				"navigationBarTitleText":"添加商品"
+			}
+        }
+        ,{
+            "path" : "pages/fundWater/fundWater",
+            "style" : {
+				"navigationBarTitleText":"本店流水"
+			}
+        }
+        ,{
+            "path" : "pages/shopSevrList/shopSevrList",
+            "style" : {
+				"navigationStyle": "custom"
+			}
+        }
+        ,{
+            "path" : "pages/preBook/preBook",
+            "style" : {
+				"navigationStyle": "custom"
+			}
+        }
+        ,{
+            "path" : "pages/bookPage/bookPage",
+            "style" : {
+				"navigationBarTitleText":"预定"
+			}
+        }
+        ,{
+            "path" : "pages/becomeServer/becomeServer",
+            "style" : {
+				"navigationBarTitleText":"成为服务商"
+			}
+        }
+        ,{
+            "path" : "pages/loginPage/loginPage",
+            "style" : {
+				"navigationStyle": "custom"
+			}
+        }
+        ,{
+            "path" : "pages/register/register",
+            "style" : {
+				"navigationStyle": "custom"
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/home.png",
+			"selectedIconPath": "static/homeSel.png",
+			"text": "首页"
+		},
+		{
+			"pagePath": "pages/shopSevrList/shopSevrList",
+			"iconPath": "static/home.png",
+			"selectedIconPath": "static/homeSel.png",
+			"text": "商家服务列表"
+		},
+		{
+			"pagePath": "pages/preBook/preBook",
+			"iconPath": "static/home.png",
+			"selectedIconPath": "static/homeSel.png",
+			"text": "预定页面"
+		},
+		{
+			"pagePath": "pages/minePage/minePage",
+			"iconPath": "static/mine.png",
+			"selectedIconPath": "static/mineSel.png",
+			"text": "个人中心"
+		}]
+	}
+}

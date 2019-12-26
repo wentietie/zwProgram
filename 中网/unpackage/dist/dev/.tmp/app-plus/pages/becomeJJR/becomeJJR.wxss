@@ -1,0 +1,100 @@
+
+.subBtn {
+	width: 92%;
+	margin: 0 auto;
+	line-height: 100rpx;
+	margin-top: 40rpx;
+	border-radius: 20rpx;
+	text-align: center;
+	color: #FFFFFF;
+	/* border-color: #edca8d; */
+	background-color: #EDCA8D;
+	font-size: 35rpx;
+}
+.rigthImgDis {
+	width: 280rpx;
+	position: absolute;
+	left: 340rpx;
+	top: 50rpx;
+	border-radius: 15rpx;
+	color: white;
+	overflow: hidden;
+}
+.rigthImgDis image {
+	width: 100%;
+	height: 200rpx;
+	display: block;
+}
+.bottomText {
+	width: 100%;
+	line-height: 60rpx;
+	font-size: 25rpx;
+	background-color: #edca8d;
+	text-align: center;
+}
+.littleText {
+	/* width: 100%; */
+	font-size: 25rpx;
+	font-weight: 600;
+	color: #edca8d;
+}
+.bigTitle {
+	/* width: ; */
+	font-size: 40rpx;
+	font-weight: 700;
+}
+.topUp {
+	width: 100%;
+	margin-top: 30rpx;
+	/* background-color: #555555; */
+	background-color: #f8f8f8;
+	border-radius: 10rpx;
+	position: relative;
+	height: 350rpx;
+}
+.leftText {
+	/* width: ; */
+	position: absolute;
+	top: 100rpx;
+	left: 30rpx;
+}
+.topTitle {
+	width: 100%;
+	font-size: 35rpx;
+	font-weight: 600;
+}
+.upIdCard {
+	width: 92%;
+	margin: 0 auto;
+	margin-top: 20rpx;
+}
+.nameInput {
+	width: 100%;
+	height: 80rpx;
+	border-bottom: 1rpx solid #e6e6e6;
+	margin-top: 20rpx;
+	/* padding: ; */
+	position: relative;
+}
+.nameInput input {
+	font-size: 30rpx;
+	height: 100%;
+}
+.nameInput image {
+	width: 30rpx;
+	height: 30rpx;
+	position: absolute;
+	right: 10rpx;
+	top: 30rpx;
+	z-index: 10000;
+}
+.topInput {
+	width: 92%;
+	margin: 0 auto;
+	margin-top: 30rpx;
+}
+.holePage {
+	width: 100%;
+	padding-bottom: 20rpx;
+}
+

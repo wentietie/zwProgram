@@ -1,0 +1,209 @@
+
+.bottomChoose{
+	width: 100%;
+}
+.eachChoose{
+	width: 100%;
+	border-top: #efefef solid 1rpx;
+	overflow: hidden;
+}
+.eachChoose text{
+	line-height: 100rpx;
+	float: left;
+	margin-left: 30rpx;
+	font-size: 30rpx;
+	font-weight: 600;
+}
+.eachChoose image{
+	width: 30rpx;
+	height: 30rpx;
+	display: block;
+	float: right;
+	margin-right: 30rpx;
+	margin-top: 35rpx;
+}
+.stuffView{
+	width: 100%;
+	height: 25rpx;
+	background-color: #efefef;
+}
+.myOrder{
+	width: 100%;
+}
+.myOrder .top{
+	width: 90%;
+	margin: 0 auto;
+	height: 100rpx;
+	border-bottom: 1rpx solid #efefef;
+}
+.myOrder .top .left{
+	float: left;
+	line-height: 100rpx;
+	font-size: 35rpx;
+	font-weight: 700;
+}
+.myOrder .top .right{
+	float: right;
+	line-height: 100rpx;
+	font-size: 25rpx;
+	/* font-weight: 700; */
+	color: #8a8a8a;
+	position: relative;
+}
+.myOrder .top .right image{
+	width: 30rpx;
+	height: 30rpx;
+	display: block;
+	position: absolute;
+	right: 0rpx;
+	top: 35rpx;
+}
+.myOrder .bottom {
+	width: 100%;
+	overflow: hidden;
+	padding: 30rpx 0;
+}
+.eachOrderBtn{
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+.eachOrderBtn image{
+	width: 50rpx;
+	height: 50rpx;
+	margin: 0 auto;
+	display: block;
+}
+.eachOrderBtn text{
+	margin-top: 5rpx;
+	font-size: 25rpx;
+}
+.myOrder .top .right text{
+	width: 100rpx;
+	position: absolute;
+	right: 40rpx;
+	/* top: 20upx; */
+}
+.stuffTop{
+	width: 100%;
+	height: 150rpx;
+	background-image: -webkit-linear-gradient(top, #f4f4f4, #f4f4f4);
+	background-image: linear-gradient(to bottom, #f4f4f4, #f4f4f4);
+}
+.bottomInfo{
+	width: 630rpx;
+	overflow: hidden;
+	margin: 0 auto;
+	/* margin-top: 20upx; */
+}
+.eachInfo{
+	width: 210rpx;
+	padding: 30rpx 0;
+	float: left;
+	text-align: center;
+}
+.eachInfo .top{
+	font-size: 35rpx;
+	font-weight: 600;
+}
+.eachInfo .bottom{
+	font-size: 30rpx;
+	/* font-weight: 600; */
+	color: #b3b3b3;
+	margin-top: 15rpx;
+}
+.topInfo{
+	width: 90%;
+	height: 130rpx;
+	margin: 0 auto;
+	margin-top: 30rpx;
+	position: relative;
+}
+.topInfo image{
+	position: absolute;
+	width: 100rpx;
+	height: 100rpx;
+	top: 10rpx;
+	border-radius: 50rpx;
+}
+.infoDetail{
+	/* width: ; */
+	position: absolute;
+	top: 10rpx;
+	left: 130rpx;
+}
+.editText{
+	position: absolute;
+	top: 80rpx;
+	font-size: 25rpx;
+	color: #EDCA8D;
+	right: 30rpx;
+}
+.infoDetail .name{
+	font-size: 35rpx;
+	font-weight: 700;
+}
+.infoDetail .bottomIntro{
+	font-size: 22rpx;
+	margin-top: 15rpx;
+	font-weight: 500;
+}
+.mineInfo{
+	width: 690rpx;
+	/* margin: 0 auto; */
+	position: absolute;
+	background-color: white;
+	border-radius: 15rpx;
+	top: 180rpx;
+	left: 30rpx;
+}
+.userTypeView{
+	position: absolute;
+	padding: 0rpx 20rpx;
+	width: auto;
+	border-radius: 50rpx;
+	border: #EDCA8D solid 2rpx;
+	font-size: 20rpx;
+	top: 45rpx;
+	left: 280rpx;
+	color: #EDCA8D;
+}
+.mineInfo image{
+	width: 100rpx;
+	height: 100rpx;
+	display: block;
+}
+.topIcon{
+	width: 100%;
+	padding-top: 80rpx;
+	height: 300rpx;
+	background-color: #000000;
+	position: relative;
+}
+.leftIcon{
+	width: 50rpx;
+	height: 50rpx;
+	position: absolute;
+	left: 30rpx;
+	/* height: 50; */
+}
+.leftIcon image{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.rightIcon{
+	width: 45rpx;
+	height: 45rpx;
+	position: absolute;
+	right: 30rpx;
+}
+.rightIcon image{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.holePage{
+	width: 100%;
+}
+

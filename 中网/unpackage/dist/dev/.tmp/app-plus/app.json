@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shopClass/shopClass",
+    "pages/cardRecharge/cardRecharge",
+    "pages/becomeJJR/becomeJJR",
+    "pages/minePage/minePage",
+    "pages/orderList/orderList",
+    "pages/shopHome/shopHome",
+    "pages/vipList/vipList",
+    "pages/vipDetail/vipDetail",
+    "pages/productMag/productMag",
+    "pages/addGoods/addGoods",
+    "pages/fundWater/fundWater",
+    "pages/shopSevrList/shopSevrList",
+    "pages/preBook/preBook",
+    "pages/bookPage/bookPage",
+    "pages/becomeServer/becomeServer",
+    "pages/loginPage/loginPage",
+    "pages/register/register"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/homeSel.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shopSevrList/shopSevrList",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/homeSel.png",
+        "text": "商家服务列表"
+      },
+      {
+        "pagePath": "pages/preBook/preBook",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/homeSel.png",
+        "text": "预定页面"
+      },
+      {
+        "pagePath": "pages/minePage/minePage",
+        "iconPath": "static/mine.png",
+        "selectedIconPath": "static/mineSel.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "中网",
+  "compilerVersion": "2.4.6",
+  "usingComponents": {}
+}

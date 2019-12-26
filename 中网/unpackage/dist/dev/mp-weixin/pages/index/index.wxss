@@ -1,0 +1,249 @@
+
+.curGodsPrice {
+	width: 90%;
+	margin: 0 auto;
+	color: #F0AB3F;
+	line-height: 30rpx;
+	margin-top: 10rpx;
+	margin-bottom: 20rpx;
+}
+.goodsTitle {
+	width: 90%;
+	height: 70rpx;
+	margin: 0 auto;
+	font-size: 27rpx;
+	font-weight: 550;
+	margin-top: 20rpx;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.eachShopLike {
+	width: 48.6%;
+	margin: 20rpx 0.7%;
+	border-radius: 10rpx;
+	box-shadow: 0 0 10rpx #C0C0C0;
+	overflow: hidden;
+	float: left;
+}
+.topShopImg {
+	width: 100%;
+	height: 240rpx;
+}
+.topShopImg image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.eachbottomShop {
+	width: 50%;
+	height: 230rpx;
+	float: left;
+}
+.eachbottomShop image {
+	width: 98%;
+	height: 100%;
+	margin: 0 auto;
+	display: block;
+}
+.eachTopShop {
+	width: 25%;
+	height: 230rpx;
+	float: left;
+}
+.eachTopShop image {
+	width: 98%;
+	height: 100%;
+	margin: 0 auto;
+	display: block;
+}
+.topList {
+	width: 100%;
+	overflow: hidden;
+}
+.shopList {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 25rpx;
+}
+.topTitleShop {
+	width: 100%;
+	font-size: 35rpx;
+}
+.selectShop {
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 30rpx;
+}
+.bottomTip {
+	font-size: 25rpx;
+	margin-top: 10rpx;
+}
+.topApply {
+	font-size: 40rpx;
+	font-weight: 550;
+}
+.rigthApplyImg {
+	width: 180rpx;
+	height: 140rpx;
+	float: right;
+	margin-right: 30rpx;
+}
+.rigthApplyImg image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.leftTextDis {
+	width: 60%;
+	float: left;
+	margin-top: 15rpx;
+}
+.applyView {
+	width: 95%;
+	margin: 15rpx auto;
+	overflow: hidden;
+}
+.stuffView {
+	background-color: #F7F6FA;
+	width: 100%;
+	height: 20rpx;
+}
+.rightTopnew {
+	width: 100%;
+	font-size: 25rpx;
+}
+.rightBottomnew {
+	width: 100%;
+	font-size: 20rpx;
+	margin-top: 15rpx;
+}
+.newRightText {
+	width: 600rpx;
+	float: left;
+	margin-left: 20rpx;
+}
+.newLeftText {
+	width: 60rpx;
+	font-size: 30rpx;
+	font-weight: 800;
+	float: left;
+}
+.midNew {
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 30rpx;
+	overflow: hidden;
+	margin-bottom: 20rpx;
+}
+.tabBottomLabel {
+	width: 100%;
+	text-align: center;
+	font-size: 25rpx;
+}
+.tabTopIcon {
+	width: 45rpx;
+	height: 45rpx;
+	margin: 20rpx auto;
+}
+.tabTopIcon image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.eachLittleTab {
+	width: 20%;
+	float: left;
+	padding: 15rpx 0;
+}
+.littleTabList {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20rpx;
+}
+.swiperView {
+	width: 95%;
+	margin: 0 auto;
+	height: 300rpx;
+	margin-top: 20rpx;
+	border-radius: 15rpx;
+	overflow: hidden;
+}
+.swiperView swiper {
+	width: 100%;
+	height: 100%;
+}
+.swiperView swiper swiper-item {
+	width: 100%;
+	height: 100%;
+}
+.swiperView swiper swiper-item image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.content {
+	width: 100%;
+	padding-top: 40rpx;
+}
+.topView {
+	width: 95%;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 20rpx;
+}
+.leftScanIcon {
+	width: 50rpx;
+	height: 50rpx;
+	float: left;
+}
+.leftScanIcon image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.topMiddleInput {
+	width: 550rpx;
+	height: 50rpx;
+	float: left;
+	margin-left: 20rpx;
+	overflow: hidden;
+	border: 1rpx solid #EEEEEE;
+	border-radius: 50rpx;
+}
+.midRightIcon {
+	width: 50rpx;
+	height: 50rpx;
+	float: left;
+	margin-left: 40rpx;
+}
+.midRightIcon image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.midLeftIcon {
+	width: 30rpx;
+	height: 30rpx;
+	float: left;
+	margin-left: 20rpx;
+	margin-top: 10rpx;
+}
+.midLeftIcon image {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.midRigthInput {
+	width: 490rpx;
+	float: left;
+	margin-left: 10rpx;
+	height: 50rpx;
+	font-size: 25rpx;
+}
+.midRigthInput input {
+	font-size: 25rpx;
+	height: 100%;
+}
+
