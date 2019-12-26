@@ -10,6 +10,10 @@
 					uni.redirectTo({
 						url: 'pages/loginPage/loginPage'
 					});
+					uni.showModal({
+						content: '请登录',
+						showCancel: false
+					});
 				}
 			})
 			

@@ -56,7 +56,7 @@
 			getVCode(){
 				var that = this
 				uni.request({
-					url:that.baseUrl + 'vcode',
+					url:that.baseUrl + 'login/vcode',
 					method:"POST",
 					header: {
 						'content-type': 'application/x-www-form-urlencoded', 
