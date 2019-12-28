@@ -107,6 +107,22 @@
 				"navigationStyle": "custom"
 			}
         }
+        ,{
+            "path" : "pages/becomeStore/becomeStore",
+            "style" : {
+				"navigationBarTitleText":"成为商户"
+			}
+        }
+        ,{
+            "path" : "pages/extend/extend",
+            "style" : {
+				"navigationBarTitleText":"我要推广"
+			}
+        }
+        ,{
+            "path" : "pages/registerHtml/registerHtml",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

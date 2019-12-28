@@ -36,7 +36,7 @@
 			<text>已有账号？</text><text style="color: #FABF6F;" @click="goToRegister">立即登陆</text>
 		</view>
 		<view class="registerNow" style="font-size: 20upx;margin-top: 20upx;">
-			<text>登录代表你已同意<text style="color: #FABF6F;">愚公移山服务协议，隐私政策</text></text>
+			<text>登录代表你已同意<text style="color: #FABF6F;">中网服务协议，隐私政策</text></text>
 		</view>
 	</view>
 </template>

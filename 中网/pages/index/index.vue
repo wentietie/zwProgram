@@ -18,11 +18,10 @@
 		</view>
 		<view class="swiperView">
 			<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
-				<!-- <view > -->
 				<swiper-item v-for="(item, index) in topSwiper" v-bind:key="index">
-					<image :src="item" mode=""></image>
+					<image :src="item.ad_url" mode="" ></image>
 				</swiper-item>
-				<!-- </view> -->
+				<!-- globalData.imgUrl + -->
 			</swiper>
 		</view>
 		<view class="littleTabList">
@@ -110,11 +109,7 @@
 	export default {
 		data() {
 			return {
-				topSwiper: [
-					'../../static/indexSwiper.png',
-					'../../static/indexSwiper.png',
-					'../../static/indexSwiper.png'
-				],
+				topSwiper: [],
 				littleTabList: [{
 						icon: '../../static/litTab3.png',
 						label: '酒店'
@@ -207,7 +202,53 @@
 			scanCode(){
 				uni.scanCode({
 					success(res) {
+						uni.setStorage({
+							key:'htmlUrl',
+							data:res.result,
+							success() {
+								uni.navigateTo({
+									url:'../registerHtml/registerHtml'
+								})
+							}
+						})
+					}
+				})
+			},
+			getLocation(){
+				uni.getLocation({
+				    type: 'wgs84',
+				    success: function (res) {
 						console.log(res)
+				    }
+				});
+			},
+			getTopSwiper(){
+				var that = this
+				uni.request({
+					url:that.baseUrl + 'home/HomePage',
+					method:'GET',
+					header:{
+						
+					},
+					data:{
+						user_id:that.globalData.userInfo.user_id
+					},
+					success(resq) {
+						that.topSwiper =  resq.data.data.swiper
+					}
+				})
+			},
+			getImgUrl(){
+				var that = this
+				uni.request({
+					url: this.baseUrl + 'home/getGlobal',
+					method:"GET",
+					data:{
+						user_id: that.globalData.userInfo.user_id
+					},
+					success(res) {
+						that.globalData.imgUrl=res.data.data.img
+						that.getTopSwiper()
 					}
 				})
 			}
@@ -217,9 +258,11 @@
 			uni.getStorage({
 				key:'userInfo',
 				success(res) {
-					that.userInfo = res.data
+					that.globalData.userInfo = res.data
 				}
-			})
+			}),
+			this.getImgUrl()
+			this.getLocation()
 		}
 	}
 </script>

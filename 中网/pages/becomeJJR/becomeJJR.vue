@@ -110,7 +110,7 @@
 			submitInfo(){
 				var that = this
 				uni.request({
-					url: that.baseUrl + 'uploadInfoImg',
+					url: that.baseUrl + 'index/uploadInfoImg',
 					method:"POST",
 					header: {
 						'content-type': 'application/x-www-form-urlencoded'
@@ -126,7 +126,6 @@
 						user_id: this.userInfo.user_id
 					},
 					success(res) {
-						// console.log(res)
 						uni.showModal({
 							content: res.data.msg,
 							showCancel: false
@@ -175,11 +174,10 @@
 					success(res) {
 						that.idCardB = res.tempFilePaths[0]
 						uni.uploadFile({
-							url: that.baseUrl + 'index/UpImg', //仅为示例，非真实的接口地址
+							url: that.baseUrl + 'login/UpImg', //仅为示例，非真实的接口地址
 							filePath: res.tempFilePaths[0],
 							name: 'file',
 							success: (uploadFileRes) => {
-								console.log(JSON.parse(uploadFileRes.data));
 								var res = JSON.parse(uploadFileRes.data)
 								if (res.code == 1) {
 									that.idCardBX = res.path
@@ -204,11 +202,10 @@
 					success(res) {
 						that.payCardF = res.tempFilePaths[0]
 						uni.uploadFile({
-							url: that.baseUrl + 'index/UpImg', //仅为示例，非真实的接口地址
+							url: that.baseUrl + 'login/UpImg', //仅为示例，非真实的接口地址
 							filePath: res.tempFilePaths[0],
 							name: 'file',
 							success: (uploadFileRes) => {
-								console.log(JSON.parse(uploadFileRes.data));
 								var res = JSON.parse(uploadFileRes.data)
 								if (res.code == 1) {
 									that.payCardFX = res.path
@@ -233,11 +230,10 @@
 					success(res) {
 						that.payCardB = res.tempFilePaths[0]
 						uni.uploadFile({
-							url: that.baseUrl + 'index/UpImg', //仅为示例，非真实的接口地址
+							url: that.baseUrl + 'login/UpImg', //仅为示例，非真实的接口地址
 							filePath: res.tempFilePaths[0],
 							name: 'file',
 							success: (uploadFileRes) => {
-								console.log(JSON.parse(uploadFileRes.data));
 								var res = JSON.parse(uploadFileRes.data)
 								if (res.code == 1) {
 									that.payCardBX = res.path

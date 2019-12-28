@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"holePage{ width: 100%; position: fixed; top: 0; left: 0; bottom: 0; background-color: #007AFF; }\n.",[1],"code{ width: ",[0,400],"; height: ",[0,400],"; margin: 0 auto; margin-top: ",[0,500],"; border-radius: ",[0,15],"; padding: ",[0,30],"; background-color: #FFFFFF; }\n.",[1],"code wx-image{ width: 100%; height: 100%; display: block; }\n",],undefined,{path:"./pages/extend/extend.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/extend/extend.wxml') } }));

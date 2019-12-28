@@ -1,0 +1,1 @@
+<view class="holePage"><view data-event-opts="{{[['longpress',[['saveImg',['$event']]]]]}}" class="code" bindlongpress="__e"><image src="{{codeUrl}}" mode></image></view></view>

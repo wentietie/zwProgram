@@ -5,7 +5,9 @@ Vue.config.productionTip = false
 
 Vue.prototype.baseUrl = 'http://zhongwang.sdyilian.top/index.php/zwapi/'
 
-Vue.prototype.userInfo = []
+import globalData from 'global/global.js'
+Vue.prototype.globalData = globalData
+
 
 App.mpType = 'app'
 

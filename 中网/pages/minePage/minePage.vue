@@ -168,7 +168,9 @@
 					'关于我们',
 					'我的足迹',
 					'成为经纪人',
-					'成为服务商'
+					'成为服务商',
+					'成为商户',
+					'我要推广'
 				],
 				shopChoose:[
 					'流水管理',
@@ -176,6 +178,8 @@
 					'产品管理',
 					'成为经纪人',
 					'成为服务商',
+					'成为商户',
+					'我要推广',
 					'切换的商家端'
 				]
 			}
@@ -198,6 +202,16 @@
 					case 4:
 						uni.navigateTo({
 							url:'../becomeServer/becomeServer'
+						})
+						break;
+					case 5:
+						uni.navigateTo({
+							url:'../becomeStore/becomeStore'
+						})
+						break;
+					case 6:
+						uni.navigateTo({
+							url:'../extend/extend'
 						})
 						break;
 					default:
@@ -245,6 +259,16 @@
 						})
 						break;
 					case 5:
+						uni.navigateTo({
+							url:'../becomeStore/becomeStore'
+						})
+						break;
+					case 6:
+						uni.navigateTo({
+							url:'../extend/extend'
+						})
+						break;
+					case 7:
 						this.userType = 0
 						break;
 					default:

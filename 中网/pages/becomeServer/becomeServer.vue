@@ -128,11 +128,10 @@
 						fBankcard: that.payCardBX,
 						mobile:that.phoneNum,
 						name:that.userName,
-						user_id:this.userInfo.user_id
-						
+						user_id:that.userInfo.user_id,
+						machineNum: that.machineNum
 					},
 					success(res) {
-						// console.log(res)
 						uni.showModal({
 							content: res.data.msg,
 							showCancel: false
@@ -187,7 +186,6 @@
 							filePath: res.tempFilePaths[0],
 							name: 'file',
 							success: (uploadFileRes) => {
-								// console.log(JSON.parse(uploadFileRes.data));
 								var res = JSON.parse(uploadFileRes.data)
 								if (res.code == 1) {
 									that.idCardBX = res.path
@@ -216,7 +214,6 @@
 							filePath: res.tempFilePaths[0],
 							name: 'file',
 							success: (uploadFileRes) => {
-								// console.log(JSON.parse(uploadFileRes.data));
 								var res = JSON.parse(uploadFileRes.data)
 								if (res.code == 1) {
 									that.payCardFX = res.path
@@ -245,7 +242,6 @@
 							filePath: res.tempFilePaths[0],
 							name: 'file',
 							success: (uploadFileRes) => {
-								// console.log(JSON.parse(uploadFileRes.data));
 								var res = JSON.parse(uploadFileRes.data)
 								if (res.code == 1) {
 									that.payCardBX = res.path

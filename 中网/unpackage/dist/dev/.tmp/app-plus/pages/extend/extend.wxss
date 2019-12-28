@@ -1,0 +1,24 @@
+
+.holePage{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background-color: #007AFF;
+}
+.code{
+	width: 400rpx;
+	height: 400rpx;
+	margin: 0 auto;
+	margin-top: 500rpx;
+	border-radius: 15rpx;
+	padding: 30rpx;
+	background-color: #FFFFFF;
+}
+.code image{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+

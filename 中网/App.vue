@@ -1,10 +1,13 @@
 <script>
 	export default {
+		
 		onLaunch: function() {
 			uni.getStorage({
 				key: 'userInfo',
 				success(res){
-					console.log(res.data)
+					uni.switchTab({
+						url: 'pages/index/index'
+					});
 				},
 				fail() {
 					uni.redirectTo({

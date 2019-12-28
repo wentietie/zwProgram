@@ -17,7 +17,10 @@
     "pages/bookPage/bookPage",
     "pages/becomeServer/becomeServer",
     "pages/loginPage/loginPage",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/becomeStore/becomeStore",
+    "pages/extend/extend",
+    "pages/registerHtml/registerHtml"
   ],
   "window": {
     "navigationBarTextStyle": "black",

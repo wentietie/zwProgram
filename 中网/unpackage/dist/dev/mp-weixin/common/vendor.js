@@ -734,7 +734,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7009,7 +7009,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7030,14 +7030,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7113,7 +7113,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7520,9 +7520,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!*******************************************!*\
-  !*** D:/company_program/中网/中网/pages.json ***!
-  \*******************************************/
+/*!*******************************************************************!*\
+  !*** D:/wenatie/company_program/中网/中网git/zwProgram/中网/pages.json ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8427,25 +8427,25 @@ module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id"
 
 /***/ }),
 /* 7 */
-/*!************************************************************!*\
-  !*** D:/company_program/中网/中网/pages.json?{"type":"style"} ***!
-  \************************************************************/
+/*!************************************************************************************!*\
+  !*** D:/wenatie/company_program/中网/中网git/zwProgram/中网/pages.json?{"type":"style"} ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationStyle": "custom" }, "pages/shopClass/shopClass": { "navigationStyle": "custom" }, "pages/cardRecharge/cardRecharge": { "navigationStyle": "custom" }, "pages/becomeJJR/becomeJJR": { "navigationBarTitleText": "成为经纪人" }, "pages/minePage/minePage": { "navigationStyle": "custom", "navigationBarTextStyle": "white" }, "pages/orderList/orderList": {}, "pages/shopHome/shopHome": { "navigationStyle": "custom" }, "pages/vipList/vipList": { "navigationStyle": "custom" }, "pages/vipDetail/vipDetail": { "navigationBarBackgroundColor": "#000000", "navigationBarTextStyle": "white" }, "pages/productMag/productMag": { "navigationBarTitleText": "产品管理" }, "pages/addGoods/addGoods": { "navigationBarTitleText": "添加商品" }, "pages/fundWater/fundWater": { "navigationBarTitleText": "本店流水" }, "pages/shopSevrList/shopSevrList": { "navigationStyle": "custom" }, "pages/preBook/preBook": { "navigationStyle": "custom" }, "pages/bookPage/bookPage": { "navigationBarTitleText": "预定" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#FFFFFF" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationStyle": "custom" }, "pages/shopClass/shopClass": { "navigationStyle": "custom" }, "pages/cardRecharge/cardRecharge": { "navigationStyle": "custom" }, "pages/becomeJJR/becomeJJR": { "navigationBarTitleText": "成为经纪人" }, "pages/minePage/minePage": { "navigationStyle": "custom", "navigationBarTextStyle": "white" }, "pages/orderList/orderList": {}, "pages/shopHome/shopHome": { "navigationStyle": "custom" }, "pages/vipList/vipList": { "navigationStyle": "custom" }, "pages/vipDetail/vipDetail": { "navigationBarBackgroundColor": "#000000", "navigationBarTextStyle": "white" }, "pages/productMag/productMag": { "navigationBarTitleText": "产品管理" }, "pages/addGoods/addGoods": { "navigationBarTitleText": "添加商品" }, "pages/fundWater/fundWater": { "navigationBarTitleText": "本店流水" }, "pages/shopSevrList/shopSevrList": { "navigationStyle": "custom" }, "pages/preBook/preBook": { "navigationStyle": "custom" }, "pages/bookPage/bookPage": { "navigationBarTitleText": "预定" }, "pages/becomeServer/becomeServer": { "navigationBarTitleText": "成为服务商" }, "pages/loginPage/loginPage": { "navigationStyle": "custom" }, "pages/register/register": { "navigationStyle": "custom" }, "pages/becomeStore/becomeStore": { "navigationBarTitleText": "成为商户" }, "pages/extend/extend": { "navigationBarTitleText": "我要推广" }, "pages/registerHtml/registerHtml": {} }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#FFFFFF" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
-/*!***********************************************************!*\
-  !*** D:/company_program/中网/中网/pages.json?{"type":"stat"} ***!
-  \***********************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/wenatie/company_program/中网/中网git/zwProgram/中网/pages.json?{"type":"stat"} ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "" };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "__UNI__393A902" };exports.default = _default;
 
 /***/ }),
 /* 9 */,
@@ -8557,6 +8557,22 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+/* 15 */
+/*!*************************************************************************!*\
+  !*** D:/wenatie/company_program/中网/中网git/zwProgram/中网/global/global.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var userInfo = [];
+var imgUrl = '';var _default =
+{
+  userInfo: userInfo,
+  imgUrl: imgUrl };exports.default = _default;
 
 /***/ })
 ]]);
