@@ -27,13 +27,16 @@
 				<image src="../../static/downArrowLit.png" mode=""></image>
 			</view>
 			<view class="eachTabMid">
-				<text>智能排序</text>
+				<!-- <text>智能排序</text> -->
 				<!-- <image src="../../static/downArrowLit.png" mode=""></image> -->
 			</view>
 			<view class="eachTabRight">
-				<text>筛选</text>
+				<!-- <text>筛选</text> -->
 				<!-- <image src="../../static/downArrowLit.png" mode=""></image> -->
 			</view>
+		</view>
+		<view class="noList" v-if="storeList.length == 0">
+			<text>———— 暂无数据 ————</text>
 		</view>
 		<view class="bottom">
 			<view class="eachShop" v-for="(item, index) in storeList" v-bind:key="index"  @click="getShopHome">
@@ -66,12 +69,8 @@
 					'../../static/indexSwiper.png',
 					'../../static/indexSwiper.png'
 				],
-				storeList:[
-					'1',
-					'1',
-					'1',
-					'1'
-				]
+				storeList:[],
+				distanceType:'1'
 				
 			}
 		},
@@ -80,12 +79,64 @@
 				uni.navigateTo({
 					url:'../shopHome/shopHome'
 				})
+			},
+			getShopList(){
+				var that = this
+				uni.request({
+					url: that.baseUrl + 'index/sjlist',
+					data:{
+						type: that.distanceType,
+						// lat:that.globalData.location.latitude,
+						// lag:that.globalData.location.longitude,
+						lat:'36.67705538913664',
+						lag:'117.1184820693606',
+						user_id: that.globalData.userInfo.user_id
+					},
+					header: {
+						'content-type': 'application/x-www-form-urlencoded'
+					},
+					method:"POST",
+					success(res) {
+						console.log(JSON.stringify(res.data))
+						console.log(res.data)
+						// that.storeList = res.data.data
+					}
+				})
+			},
+			getTopImg(){
+				var that = this
+				uni.request({
+					url:that.baseUrl + 'home/HomePage',
+					method:'GET',
+					header:{
+						
+					},
+					data:{
+						user_id:that.globalData.userInfo.user_id
+					},
+					success(resq) {
+						that.topSwiper =  resq.data.data.swiper
+					}
+				})
 			}
+		},
+		created() {
+			// this.getTopImg()
+		},
+		onShow(){
+			this.getShopList()
 		}
 	}
 </script>
 
 <style>
+	.noList{
+		width: 100%;
+		line-height: 100upx;
+		font-size: 22upx;
+		text-align: center;
+		color: #A5A5A5;
+	}
 	.rigthInput{
 		width: 380upx;
 		margin-left: 0;
@@ -132,7 +183,9 @@
 		background-color: #FFFFFF;
 		position: fixed;
 		left: 0;
-		top: 0;
+		top: 0upx;
+		z-index: 1000;
+		
 	}
 	.topImg{
 		width: 70upx;

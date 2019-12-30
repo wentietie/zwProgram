@@ -1,0 +1,46 @@
+
+.title{
+	font-size: 30rpx;
+	color: #333333;
+	float: left;
+}
+.date{
+	float: right;
+	font-size: 22rpx;
+	color: #878787;
+}
+.userInfo{
+	width: 100%;
+	float: left;
+	margin-top: 50rpx;
+}
+.eachInfo{
+	width: 100%;
+	font-size: 22rpx;
+	color: #8A8A8A;
+}
+.holePage{
+	width: 100%;
+	padding: 20rpx;
+}
+.eachMember{
+	width: 94%;
+	padding: 20rpx 3%;
+	margin: 10rpx;
+	overflow: hidden;
+}
+.eachMember image{
+	width: 120rpx;
+	height: 120rpx;
+	display: block;
+	float: left;
+}
+.rightInfo{
+	width: 500rpx;
+	float: left;
+	margin-left: 20rpx;
+	border-bottom: 1rpx solid #E6E6E6;
+	overflow: hidden;
+	padding-bottom: 15rpx;
+}
+

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/loginPage/loginPage",
     "pages/shopClass/shopClass",
     "pages/cardRecharge/cardRecharge",
     "pages/becomeJJR/becomeJJR",
@@ -16,11 +17,14 @@
     "pages/preBook/preBook",
     "pages/bookPage/bookPage",
     "pages/becomeServer/becomeServer",
-    "pages/loginPage/loginPage",
     "pages/register/register",
     "pages/becomeStore/becomeStore",
     "pages/extend/extend",
-    "pages/registerHtml/registerHtml"
+    "pages/registerHtml/registerHtml",
+    "pages/myOrderList/myOrderList",
+    "pages/myTeam/myTeam",
+    "pages/mySuggest/mySuggest",
+    "pages/editInfo/editInfo"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -51,6 +55,12 @@
         "iconPath": "static/home.png",
         "selectedIconPath": "static/homeSel.png",
         "text": "预定页面"
+      },
+      {
+        "pagePath": "pages/shopClass/shopClass",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/homeSel.png",
+        "text": "分类"
       },
       {
         "pagePath": "pages/minePage/minePage",

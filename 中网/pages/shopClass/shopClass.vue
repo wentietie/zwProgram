@@ -1,9 +1,9 @@
 <template>
 	<view class="holePage">
 		<view class="topView">
-			<view class="leftScanIcon" @click="goBack">
+			<!-- <view class="leftScanIcon" @click="goBack">
 				<image src="../../static/goBack.png" mode=""></image>
-			</view>
+			</view> -->
 			<view class="topMiddleInput">
 				<view class="midLeftIcon">
 					<image src="../../static/searchIcon.png" mode=""></image>

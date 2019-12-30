@@ -2,16 +2,17 @@
 	export default {
 		
 		onLaunch: function() {
+			
 			uni.getStorage({
 				key: 'userInfo',
 				success(res){
 					uni.switchTab({
-						url: 'pages/index/index'
+						url: './pages/index/index'
 					});
 				},
 				fail() {
 					uni.redirectTo({
-						url: 'pages/loginPage/loginPage'
+						url: './pages/loginPage/loginPage'
 					});
 					uni.showModal({
 						content: '请登录',
@@ -22,10 +23,27 @@
 			
 		},
 		onShow: function() {
-			console.log('App Show')
+			// console.log('App Show')
+			uni.getStorage({
+				key: 'userInfo',
+				success(res){
+					uni.switchTab({
+						url: './pages/index/index'
+					});
+				},
+				fail() {
+					uni.redirectTo({
+						url: './pages/loginPage/loginPage'
+					});
+					uni.showModal({
+						content: '请登录',
+						showCancel: false
+					});
+				}
+			})
 		},
 		onHide: function() {
-			console.log('App Hide')
+			// console.log('App Hide')
 		}
 	}
 </script>

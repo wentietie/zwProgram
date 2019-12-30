@@ -24,7 +24,7 @@
 				</view>
 			</view>
 			<view class="bottomInfo">
-				<view class="eachInfo">
+				<view class="eachInfo" @click="lookAllOrder">
 					<view class="top">
 						<text>10个</text>
 					</view>
@@ -111,7 +111,7 @@
 					</view>
 				</view>
 				<view class="bottom">
-					<view class="eachOrderBtn" v-for="(item, index) in orderBtnList" v-bind:key="index">
+					<view class="eachOrderBtn" v-for="(item, index) in orderBtnList" v-bind:key="index" @click="getType()">
 						<image :src="item.img" mode=""></image>
 						<text>{{item.label}}</text>
 					</view>
@@ -130,19 +130,22 @@
 				
 			</view>
 			<view class="bottomChoose">
-				<view class="eachChoose" v-for="(item, index) in bottomChoose" v-bind:key="index" @click="goPage(index)">
-					<text>{{item}}</text>
+				<view class="eachChoose" v-for="(item, index) in bottomChoose" v-bind:key="index" @click="goPage(item.url)">
+					<text>{{item.title}}</text>
 					<image src="../../static/rightArrow.png" mode=""></image>
 				</view>
 			</view>
 		</view>
 		<view style="wdith: 100%" v-if="userType == 1">
 			<view class="bottomChoose">
-				<view class="eachChoose" v-for="(item, index) in shopChoose" v-bind:key="index" @click="goPageShop(index)">
-					<text>{{item}}</text>
+				<view class="eachChoose" v-for="(item, index) in shopChoose" v-bind:key="index" @click="goPageShop(item.url)">
+					<text>{{item.title}}</text>
 					<image src="../../static/rightArrow.png" mode=""></image>
 				</view>
 			</view>
+		</view>
+		<view class="logOut" @click="logout">
+			<text>退出登陆</text>
 		</view>
 	</view>
 </template>
@@ -164,29 +167,42 @@
 					'我的订单'
 				],
 				bottomChoose:[
-					'客服',
-					'关于我们',
-					'我的足迹',
-					'成为经纪人',
-					'成为服务商',
-					'成为商户',
-					'我要推广'
+					{title:'客服',},
+					{title:'关于我们'},
+					{title:'我的足迹'},
+					// {'流水管理',url:'../fundWater/fundWater'},
+					// {'店铺管理',url:'../becomeStore/becomeStore'},
+					// {'产品管理',url:'../productMag/productMag'},
+					{title:'成为经纪人',url:'../becomeJJR/becomeJJR'},
+					{title:'成为服务商',url:'../becomeServer/becomeServer'},
+					{title:'成为商户',url:'../becomeStore/becomeStore'},
+					{title:'我要推广',url:'../extend/extend'}
 				],
 				shopChoose:[
-					'流水管理',
-					'店铺管理',
-					'产品管理',
-					'成为经纪人',
-					'成为服务商',
-					'成为商户',
-					'我要推广',
-					'切换的商家端'
+					{title:'流水管理',url:'../fundWater/fundWater'},
+					{title:'店铺管理',url:'../becomeStore/becomeStore'},
+					{title:'产品管理',url:'../productMag/productMag'},
+					{title:'成为经纪人',url:'../becomeJJR/becomeJJR'},
+					{title:'成为服务商',url:'../becomeServer/becomeServer'},
+					{title:'成为商户',url:'../becomeStore/becomeStore'},
+					{title:'我要推广',url:'../extend/extend'},
+					{title:'我的团队',url:'../myTeam/myTeam'},
+					{title:'我的推荐',url:'../mySuggest/mySuggest'}
 				],
 				userInfo: {},
 			}
 		},
 		methods: {
-			
+			lookAllOrder(){
+				uni.navigateTo({
+					url:'../myOrderList/myOrderList'
+				})
+			},
+			getType(){
+				uni.navigateTo({
+					url:'../myOrderList/myOrderList'
+				})
+			},
 			goToPages : function (url,type = 0) {
 				if(type == 2) {
 					let level = this.userInfo.level
@@ -203,7 +219,7 @@
 					url
 				})
 			},
-			getUserInfo : function() {
+			getUserInfo: function() {
 				let user_id = this.globalData.userInfo.user_id;
 				let nick_name = this.globalData.userInfo.user_name;
 				let head_pic = this.globalData.userInfo.head_pic;
@@ -211,51 +227,28 @@
 				if(user_id == null || user_id == undefined || user_id == '' || user_id == 0) {
 					uni.showModal({
 						content: '请登录',
-						showCancel: false
+						showCancel: false,
+						success() {
+							setTimeout(()=>{
+								uni.redirectTo({
+									url: '../loginPage/loginPage'
+								});
+							},1500)
+						}
 					});
-					setTimeout(()=>{
-						uni.redirectTo({
-							url: 'pages/loginPage/loginPage'
-						});
-					},1500)
+					
 					return;
 				}
+				this.userInfo.level = level
 				this.userInfo.user_id = user_id
 				this.userInfo.nick_name = nick_name ? nick_name : '待完善'
 				this.userInfo.head_pic = head_pic ? (this.baseUrl + head_pic) : '../../static/goodsImg.png'
 			},
 			//根据index进行页面跳转
 			goPage(i){
-				switch (i){
-					case 0:
-						break;
-					case 1:
-						break;
-					case 2:
-						break;
-					case 3:
-						uni.navigateTo({
-							url:'../becomeJJR/becomeJJR'
-						})
-						break;
-					case 4:
-						uni.navigateTo({
-							url:'../becomeServer/becomeServer'
-						})
-						break;
-					case 5:
-						uni.navigateTo({
-							url:'../becomeStore/becomeStore' 
-						})
-						break;
-					case 6:
-						uni.navigateTo({
-							url:'../extend/extend'
-						})
-						break;
-					default:
-						break;
-				}
+				uni.navigateTo({
+					url:url
+				})
 			},
 			goPageOrder(i){
 				switch (i){
@@ -273,51 +266,56 @@
 				}
 			},
 			//
-			goPageShop(i){
-				
-				switch (i){
-					case 0:
-						uni.navigateTo({
-							url:'../fundWater/fundWater'
-						})
-						break;
-					case 1:
-						break;
-					case 2:
-						uni.navigateTo({
-							url:'../productMag/productMag'
-						})
-						break;
-					case 3:
-						uni.navigateTo({
-							url:'../becomeJJR/becomeJJR'
-						})
-						break;
-					case 4:
-						uni.navigateTo({
-							url:'../becomeServer/becomeServer'
-						})
-						break;
-					case 5:
-						uni.navigateTo({
-							url:'../becomeStore/becomeStore'
-						})
-						break;
-					case 6:
-						uni.navigateTo({
-							url:'../extend/extend'
-						})
-						break;
-					case 7:
-						this.userType = 0
-						break;
-					default:
-						break;
-				}
+			goPageShop(url){
+				uni.navigateTo({
+					url:url
+				})
+			},
+			logout(){
+				uni.clearStorage();
+				uni.redirectTo({
+					url: '../loginPage/loginPage'
+				});
+			},
+			getUserType(){
+				 // 等级: 1用户  2商家 3服务商 4经纪人 5经纪人和服务商
+				var that = this
+				uni.request({
+					url:that.baseUrl + 'goods/getUserLv',
+					method:'GET',
+					data:{
+						user_id: that.globalData.userInfo.user_id
+					},
+					success(e) {
+						// console.log(that.globalData.userInfo)
+						if(e.data.code == 1){
+							that.globalData.userInfo.level = e.data.res.level
+							// uni.showToast({
+							// 	title:'刷新成功',
+							// 	icon:'none'
+							// })
+							uni.stopPullDownRefresh();
+						}else{
+							uni.showToast({
+								title:'网络错误',
+								icon:'none'
+							})
+							// uni.hiddenToast()
+							uni.stopPullDownRefresh();
+						}
+					}
+				})
 			}
 		},
 		created : function () {
 			this.getUserInfo()
+		},
+		onShow() {
+			this.getUserType()
+		},
+		onPullDownRefresh() {
+			//监听下拉刷新动作的执行方法，每次手动下拉刷新都会执行一次
+			this.getUserType()
 		}
 		
 		
@@ -325,6 +323,18 @@
 </script>
 
 <style>
+	.logOut{
+		width: 90%;
+		margin: 0 auto;
+		margin-top: 100upx;
+		line-height: 80upx;
+		text-align: center;
+		font-size: 25upx;
+		background-color: red;
+		color: #FFFFFF;
+		margin-bottom: 100upx;
+		border-radius: 10upx;
+	}
 	.bottomChoose{
 		width: 100%;
 	}

@@ -123,6 +123,12 @@
           "text": "预定页面"
         },
         {
+          "pagePath": "pages/shopClass/shopClass",
+          "iconPath": "static/home.png",
+          "selectedIconPath": "static/homeSel.png",
+          "text": "分类"
+        },
+        {
           "pagePath": "pages/minePage/minePage",
           "iconPath": "static/mine.png",
           "selectedIconPath": "static/mineSel.png",

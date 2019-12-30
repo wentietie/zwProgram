@@ -5,7 +5,13 @@
 			"style": {
 				"navigationStyle": "custom"
 			}
-		}, {
+		}
+        ,{
+            "path" : "pages/loginPage/loginPage",
+            "style" : {
+				"navigationStyle": "custom"
+			}
+        }, {
 			"path": "pages/shopClass/shopClass",
 			"style": {
 				"navigationStyle": "custom"
@@ -25,7 +31,9 @@
             "path" : "pages/minePage/minePage",
             "style" : {
 				"navigationStyle": "custom",
-				"navigationBarTextStyle":"white"
+				"navigationBarTextStyle":"white",
+				"enablePullDownRefresh": true,  //设置为true表示当前页面开启下拉刷新
+				"backgroundTextStyle": "dark"  //下拉 loading 的样式，仅支持 dark/light
 			}
         }
         ,{
@@ -96,12 +104,6 @@
 			}
         }
         ,{
-            "path" : "pages/loginPage/loginPage",
-            "style" : {
-				"navigationStyle": "custom"
-			}
-        }
-        ,{
             "path" : "pages/register/register",
             "style" : {
 				"navigationStyle": "custom"
@@ -121,6 +123,26 @@
         }
         ,{
             "path" : "pages/registerHtml/registerHtml",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/myOrderList/myOrderList",
+            "style" : {
+				"navigationBarTitleText":"我的订单"
+			}
+        }
+        ,{
+            "path" : "pages/myTeam/myTeam",
+            "style" : {
+				"navigationBarTitleText":"我的团队"
+			}
+        }
+        ,{
+            "path" : "pages/mySuggest/mySuggest",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/editInfo/editInfo",
             "style" : {}
         }
     ],
@@ -152,6 +174,12 @@
 			"iconPath": "static/home.png",
 			"selectedIconPath": "static/homeSel.png",
 			"text": "预定页面"
+		},
+		{
+			"pagePath": "pages/shopClass/shopClass",
+			"iconPath": "static/home.png",
+			"selectedIconPath": "static/homeSel.png",
+			"text": "分类"
 		},
 		{
 			"pagePath": "pages/minePage/minePage",

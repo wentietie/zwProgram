@@ -65,7 +65,7 @@
 					},
 					success(res) {
 						if (res.data.code == 1) {
-							that.globalData = res.data.data
+							uni.clearStorage()
 							uni.setStorage({
 								key:'userInfo',
 								data: res.data.data,
@@ -75,6 +75,13 @@
 										icon: 'none',
 										duration: 1000,
 										success() {
+											uni.getStorage({
+												key:'userInfo',
+												success(res) {
+													that.globalData.userInfo = res.data
+													// console.log(that.globalData.userInfo)
+												}
+											}),
 											setTimeout(function() {
 												//要延时执行的代码
 												uni.switchTab({
@@ -86,7 +93,21 @@
 									})
 								}
 							})
-							
+							// uni.setStorageSync('userInfo',res.data.data)
+							// uni.showToast({
+							// 	title: res.data.msg,
+							// 	icon: 'none',
+							// 	duration: 1000,
+							// 	success() {
+							// 		setTimeout(function() {
+							// 			//要延时执行的代码
+							// 			uni.switchTab({
+							// 				url: '../index/index'
+							// 			});
+							// 		}, 1000)
+									
+							// 	}
+							// })
 
 						} else {
 							uni.showToast({

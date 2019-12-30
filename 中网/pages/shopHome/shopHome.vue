@@ -92,7 +92,8 @@
 					'用户评价',
 					'商家信息'
 				],
-				curTab:0
+				curTab:0,
+				
 			}
 		},
 		methods: {
@@ -106,7 +107,26 @@
 				uni.navigateTo({
 					url:'../vipList/vipList'
 				})
+			},
+			postData(){
+				uni.request({
+					url:'',
+					method:'GET',
+					data:{
+						// store_logo:
+						// store_name:
+						// store_address:
+						// longitude:
+						// latitude:
+					},
+					success(res){
+						console.log(res)
+					}
+				})
 			}
+		},
+		onShow() {
+			
 		}
 	}
 </script>
@@ -117,17 +137,18 @@
 		margin: 0 auto;
 		color: #F0AB3F;
 		line-height: 30upx;
-		margin-top: 10upx;
+		margin-top: 30upx;
 		margin-bottom: 20upx;
 	}
 	.goodsTitle{
 		width: 100%;
 		font-size: 30upx;
+		overflow: hidden;
 		display: -webkit-box;
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
-		overflow: hidden;
-		height: 90upx;
+		text-overflow: ellipsis;
+		/* height: 90upx; */
 	}
 	.bottomText{
 		width: 90%;

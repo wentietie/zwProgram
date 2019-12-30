@@ -1,4 +1,20 @@
 
+.upLogo{
+	width: 60%;
+	
+	margin: 30rpx 0;
+	margin-left: 30rpx;
+}
+.upLogo text{
+	font-size: 30rpx;
+	/* font-weight: 600; */
+}
+.upLogo image{
+	width: 150rpx;
+	height: 150rpx;
+	display: block;
+	margin-top: 20rpx;
+}
 .subBtn {
 	width: 92%;
 	margin: 0 auto;
@@ -96,5 +112,17 @@
 .holePage {
 	width: 100%;
 	padding-bottom: 20rpx;
+}
+.topLabel {
+	font-size: 30rpx;
+	padding: 20rpx;
+}
+.bottomLabel {
+	padding: 20rpx;
+	border-bottom: 2rpx solid #e6e6e6;
+	width: 92%;
+	margin: 0 auto;
+	/* text-align: center; */
+	font-size: 30rpx;
 }
 

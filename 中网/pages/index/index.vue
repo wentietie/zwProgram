@@ -9,7 +9,7 @@
 					<image src="../../static/searchIcon.png" mode=""></image>
 				</view>
 				<view class="midRigthInput">
-					<input type="text" value="" placeholder="搜索内容" @click="goClass" />
+					<input type="text" value="" placeholder="搜索内容"/>
 				</view>
 			</view>
 			<view class="midRightIcon">
@@ -189,11 +189,6 @@
 			
 		},
 		methods: {
-			goClass(){
-				uni.navigateTo({
-					url:'../shopClass/shopClass'
-				})
-			},
 			applyCard(){
 				uni.navigateTo({
 					url:'../cardRecharge/cardRecharge'
@@ -215,10 +210,24 @@
 				})
 			},
 			getLocation(){
+				var that = this
 				uni.getLocation({
 				    type: 'wgs84',
 				    success: function (res) {
-						console.log(res)
+						console.log('111')
+						uni.setStorage({
+							key : "location",
+							data: res,
+							success() {
+								uni.getStorage({
+									key : 'location',
+									success(e) {
+										that.globalData.location = e.data
+										console.log(that.globalData.location)
+									}
+								})
+							}
+						})
 				    }
 				});
 			},
@@ -251,9 +260,9 @@
 						that.getTopSwiper()
 					}
 				})
-			}
+			},
 		},
-		created() {
+		onLoad() {
 			var that = this
 			uni.getStorage({
 				key:'userInfo',

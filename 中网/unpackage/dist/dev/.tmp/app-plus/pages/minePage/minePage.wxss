@@ -1,4 +1,16 @@
 
+.logOut{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 100rpx;
+	line-height: 80rpx;
+	text-align: center;
+	font-size: 25rpx;
+	background-color: red;
+	color: #FFFFFF;
+	margin-bottom: 100rpx;
+	border-radius: 10rpx;
+}
 .bottomChoose{
 	width: 100%;
 }

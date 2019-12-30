@@ -9,6 +9,23 @@
 				<input type="number" value="" v-model="phoneNum" placeholder="请输入手机号" />
 				<image src="../../static/clearIcon.png" mode="" @click="clearPhone()"></image>
 			</view>
+			<view class="nameInput">
+				<input type="text" value="" v-model="storeName" placeholder="请输入店铺名" />
+				<image src="../../static/clearIcon.png" mode="" @click="clearSName()"></image>
+			</view>
+			<view class="nameInput">
+				<input type="text" value="" v-model="storeAddress" placeholder="请输入店铺地址" />
+				<image src="../../static/clearIcon.png" mode="" @click="clearAdd()"></image>
+			</view>
+			<view class="nameInput">
+				<input type="text" value="" v-model="storeIntro" placeholder="请输入店铺简介" />
+				<image src="../../static/clearIcon.png" mode="" @click="clearIntro()"></image>
+			</view>
+		</view>
+		
+		<view class="upLogo">
+			<text>上传Logo</text>
+			<image :src="logoImg" mode="" @click="upLogo"></image>
 		</view>
 		
 		<view class="eachInput">
@@ -17,7 +34,7 @@
 			</view>
 			<view class="bottomLabel">
 				<picker v-if="storeCategory[0]" :range="storeCategory" :value="storeIndex" :range-key="'name'" @change="changeStore">
-					<view>{{storeCategory[0].name}}</view>
+					<view>{{storeCategory[storeIndex].name}}</view>
 				</picker>
 			</view>
 		</view>
@@ -117,7 +134,12 @@
 				payCardBX: '',
 				storeCategory : [],
 				nav_id : 0,
-				storeIndex : 0
+				storeIndex : 0,
+				storeName:'',
+				storeAddress:'',
+				storeIntro:'',
+				logoImg:'../../static/addImg.png',
+				logoImgX: '',
 			}
 		},
 		methods: {
@@ -138,7 +160,10 @@
 						mobile:that.phoneNum,
 						name:that.userName,
 						user_id: that.globalData.userInfo.user_id,
-						nav_id: that.nav_id
+						nav_id: that.nav_id,
+						store_logo:that.logoImgX,
+						store_name:that.storeName,
+						store_address:that.storeAddress
 					},
 					success(res) {
 						uni.showModal({
@@ -153,6 +178,44 @@
 			},
 			clearPhone() {
 				this.phoneNum = ''
+			},
+			clearSName() {
+				this.storeName = ''
+			},
+			clearAdd() {
+				this.storeAddress = ''
+			},
+			clearIntro() {
+				this.storeIntro = ''
+			},
+			upLogo(){
+				var that = this
+				uni.chooseImage({
+					success(res) {
+						that.logoImg = res.tempFilePaths[0]
+						uni.uploadFile({
+							url: that.baseUrl + 'login/UpImg', //仅为示例，非真实的接口地址
+							// url: 'http://zhongwang.sdyilian.top/index.php/zwapi/login/UpImg',
+							filePath: res.tempFilePaths[0],
+							name: 'file',
+							success: (uploadFileRes) => {
+								var res = JSON.parse(uploadFileRes.data)
+								if (res.code == 1) {
+									that.logoImgX = res.path
+									uni.showToast({
+										title: '上传成功',
+										duration: 2000
+									});
+								} else {
+									uni.showToast({
+										title: '网络错误,刷新试试',
+										duration: 2000
+									});
+								}
+							}
+						});
+					}
+				})
 			},
 			upIDcardF() {
 				var that = this
@@ -321,6 +384,22 @@
 </script>
 
 <style>
+	.upLogo{
+		width: 60%;
+		
+		margin: 30upx 0;
+		margin-left: 30upx;
+	}
+	.upLogo text{
+		font-size: 30upx;
+		/* font-weight: 600; */
+	}
+	.upLogo image{
+		width: 150upx;
+		height: 150upx;
+		display: block;
+		margin-top: 20upx;
+	}
 	.subBtn {
 		width: 92%;
 		margin: 0 auto;
@@ -444,7 +523,7 @@
 		border-bottom: 2upx solid #e6e6e6;
 		width: 92%;
 		margin: 0 auto;
-		text-align: center;
+		/* text-align: center; */
 		font-size: 30upx;
 	}
 </style>

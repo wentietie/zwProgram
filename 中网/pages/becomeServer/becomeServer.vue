@@ -128,13 +128,16 @@
 						fBankcard: that.payCardBX,
 						mobile:that.phoneNum,
 						name:that.userName,
-						user_id:that.userInfo.user_id,
+						user_id:that.globalData.userInfo.user_id,
 						machineNum: that.machineNum
 					},
 					success(res) {
 						uni.showModal({
 							content: res.data.msg,
-							showCancel: false
+							showCancel: false,
+							success() {
+								uni.navigateBack(-1)
+							}
 						})
 					}
 				})
