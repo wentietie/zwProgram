@@ -13,10 +13,10 @@
 				<text>编辑</text>
 			</view>
 			<view class="topInfo">
-				<image src="../../static/goodsImg.png" mode=""></image>
+				<image :src="userInfo.head_pic" mode=""></image>
 				<view class="infoDetail">
 					<view class="name">
-						<text>牛木叶</text>
+						<text>{{userInfo.nick_name}}</text>
 					</view>
 					<view class="bottomIntro">
 						<text>个人简介</text>
@@ -58,10 +58,10 @@
 				<text>编辑</text>
 			</view>
 			<view class="topInfo">
-				<image src="../../static/goodsImg.png" mode=""></image>
+				<image :src="userInfo.head_pic" mode=""></image>
 				<view class="infoDetail">
 					<view class="name">
-						<text>牛木叶</text>
+						<text>{{userInfo.nick_name}}</text>
 					</view>
 					<view class="bottomIntro">
 						<text>个人简介</text>
@@ -69,7 +69,7 @@
 				</view>
 			</view>
 			<view class="bottomInfo">
-				<view class="eachInfo">
+				<view class="eachInfo" @click="goToPages('../addGoods/addGoods',2)"  >
 					<view class="top">
 						<text>10个</text>
 					</view>
@@ -181,10 +181,49 @@
 					'成为商户',
 					'我要推广',
 					'切换的商家端'
-				]
+				],
+				userInfo: {},
 			}
 		},
 		methods: {
+			
+			goToPages : function (url,type = 0) {
+				if(type == 2) {
+					let level = this.userInfo.level
+					if(level != 2) {
+						uni.showToast({
+							title : '权限不足请先成为商户',
+							duration: 2000,
+							icon: 'none'
+						})
+						return;
+					}
+				}
+				uni.navigateTo({
+					url
+				})
+			},
+			getUserInfo : function() {
+				let user_id = this.globalData.userInfo.user_id;
+				let nick_name = this.globalData.userInfo.user_name;
+				let head_pic = this.globalData.userInfo.head_pic;
+				let level = this.globalData.userInfo.level;
+				if(user_id == null || user_id == undefined || user_id == '' || user_id == 0) {
+					uni.showModal({
+						content: '请登录',
+						showCancel: false
+					});
+					setTimeout(()=>{
+						uni.redirectTo({
+							url: 'pages/loginPage/loginPage'
+						});
+					},1500)
+					return;
+				}
+				this.userInfo.user_id = user_id
+				this.userInfo.nick_name = nick_name ? nick_name : '待完善'
+				this.userInfo.head_pic = head_pic ? (this.baseUrl + head_pic) : '../../static/goodsImg.png'
+			},
 			//根据index进行页面跳转
 			goPage(i){
 				switch (i){
@@ -206,7 +245,7 @@
 						break;
 					case 5:
 						uni.navigateTo({
-							url:'../becomeStore/becomeStore'
+							url:'../becomeStore/becomeStore' 
 						})
 						break;
 					case 6:
@@ -235,6 +274,7 @@
 			},
 			//
 			goPageShop(i){
+				
 				switch (i){
 					case 0:
 						uni.navigateTo({
@@ -275,7 +315,12 @@
 						break;
 				}
 			}
+		},
+		created : function () {
+			this.getUserInfo()
 		}
+		
+		
 	}
 </script>
 

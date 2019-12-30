@@ -65,7 +65,7 @@
 					},
 					success(res) {
 						if (res.data.code == 1) {
-							// console.log(res.data.data)
+							that.globalData = res.data.data
 							uni.setStorage({
 								key:'userInfo',
 								data: res.data.data,
