@@ -1,6 +1,6 @@
 <template>
 	<view class="holePage">
-		<view class="topInput">
+		<view class="topInput"> 
 			<view class="nameInput">
 				<input type="text" value="" v-model="userName" placeholder="请输入姓名" />
 				<image src="../../static/clearIcon.png" mode="" @click="clearName()"></image>
@@ -8,6 +8,17 @@
 			<view class="nameInput">
 				<input type="number" value="" v-model="phoneNum" placeholder="请输入手机号" />
 				<image src="../../static/clearIcon.png" mode="" @click="clearPhone()"></image>
+			</view>
+		</view>
+		
+		<view class="eachInput">
+			<view class="topLabel">
+				<text>店铺类型</text>
+			</view>
+			<view class="bottomLabel">
+				<picker v-if="storeCategory[0]" :range="storeCategory" :value="storeIndex" :range-key="'name'" @change="changeStore">
+					<view>{{storeCategory[0].name}}</view>
+				</picker>
 			</view>
 		</view>
 		<view class="upIdCard">
@@ -104,6 +115,9 @@
 				idCardBX: '',
 				payCardFX: '',
 				payCardBX: '',
+				storeCategory : [],
+				nav_id : 0,
+				storeIndex : 0
 			}
 		},
 		methods: {
@@ -123,7 +137,8 @@
 						fBankcard: that.payCardBX,
 						mobile:that.phoneNum,
 						name:that.userName,
-						user_id: this.userInfo.user_id
+						user_id: that.globalData.userInfo.user_id,
+						nav_id: that.nav_id
 					},
 					success(res) {
 						uni.showModal({
@@ -251,11 +266,57 @@
 						});
 					}
 				})
+			},
+			changeStore :function (e){
+				this.storeIndex = e.target.value
+				this.nav_id = this.storeCategory[e.target.value].nav_id
+			},
+			getStoreCategory :function () {
+				let that = this;
+				uni.request({
+					url : that.baseUrl + 'index/nav',
+					data : {
+						user_id : that.globalData.userInfo.user_id 
+					},
+					success :function (res) {
+						if(res.data.code == 1) {
+							that.storeCategory = res.data.data
+							if(res.data.status == 1) {
+								uni.showToast({
+									title : res.data.msg,
+									icon:'none'
+								})
+								setTimeout(function () {
+									uni.navigateBack(-1)
+								},1500)
+								return;
+							} else if(res.data.status == 3){
+								
+								return;
+							} else {
+								uni.showToast({
+									title : res.data.msg,
+									icon:'none'
+								})
+							}
+						} else {
+							uni.showToast({
+								title : res.data.msg,
+								icon:'none'
+							})
+							setTimeout(function () {
+								uni.navigateBack(-1)
+							},1500)
+							return;
+						}
+					}
+				})
 			}
 		},
 		created() {
-			
-		}
+			this.getStoreCategory()//获取分类
+		},
+		
 	}
 </script>
 
@@ -371,5 +432,19 @@
 	.holePage {
 		width: 100%;
 		padding-bottom: 20upx;
+	}
+	
+	.topLabel {
+		font-size: 30upx;
+		padding: 20upx;
+	}
+	
+	.bottomLabel {
+		padding: 20upx;
+		border-bottom: 2upx solid #e6e6e6;
+		width: 92%;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 30upx;
 	}
 </style>
