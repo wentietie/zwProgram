@@ -1,4 +1,4 @@
-<template>
+<template style="background-color: #EEEEEE;">
 	<view class="holePage">
 		<view class="pageTop">
 			<view class="topImg">
@@ -87,9 +87,9 @@
 					data:{
 						type: that.distanceType,
 						// lat:that.globalData.location.latitude,
-						// lag:that.globalData.location.longitude,
+						// lng:that.globalData.location.longitude,
 						lat:'36.67705538913664',
-						lag:'117.1184820693606',
+						lng:'117.1184820693606',
 						user_id: that.globalData.userInfo.user_id
 					},
 					header: {
@@ -97,8 +97,8 @@
 					},
 					method:"POST",
 					success(res) {
-						console.log(JSON.stringify(res.data))
-						console.log(res.data)
+						// console.log(JSON.stringify(res.data))
+						console.log(res)
 						// that.storeList = res.data.data
 					}
 				})
@@ -185,7 +185,7 @@
 		left: 0;
 		top: 0upx;
 		z-index: 1000;
-		
+		padding-top: 30upx;
 	}
 	.topImg{
 		width: 70upx;

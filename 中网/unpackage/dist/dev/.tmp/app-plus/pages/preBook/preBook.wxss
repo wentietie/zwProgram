@@ -115,7 +115,7 @@
 }
 .eachGoods{
 	width: 700rpx;
-	margin: 20rpx auto;
+	margin: 40rpx auto;
 	height: 120rpx;
 	overflow: hidden;
 }
@@ -153,6 +153,10 @@
 .rightBook .title{
 	font-size: 30rpx;
 	font-weight: 700;
+	width: 80%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .rightBook .type{
 	font-size: 25rpx;

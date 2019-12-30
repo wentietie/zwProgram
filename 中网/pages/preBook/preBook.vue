@@ -65,20 +65,21 @@
 		<view class="bottomContent">
 			<view class="eachContent" v-if="curTab == 0">
 				<text style="line-height: 60upx;font-size: 30upx;font-weight: 700;">精品专享</text>
-				<view class="eachGoods">
-					<image src="../../static/addImg.png" mode=""></image>
+				<view class="eachGoods" v-for="(item, index) in goodList" v-bind:key="index">
+					<image :src="item.original_img" mode=""></image>
 					<view class="rightBook">
 						<view class="title">
-							<text>大床房</text>
+							<text>{{item.goods_name}}</text>
 						</view>
 						<view class="type">
-							<text>床型 圆床直径1.8米</text>
+							<!-- <text>床型 圆床直径1.8米</text> -->
+							<text>{{item.goods_content}}</text>
 						</view>
 						<view class="bookBtn" @click="bookThis">
 							<text>预定</text>
 						</view>
 						<view class="saleNum">
-							<text>半年销量2132</text>
+							<text>半年销量{{item.sales_sum}}</text>
 						</view>
 					</view>
 				</view>
@@ -97,13 +98,13 @@
 						</view>
 						<view class="assDis">
 							<text>评价</text>
-							<image v-for="itemNum in item.starNum" v-bind:key="item" src="../../static/starIcon.png" mode=""></image>
+							<image v-for="itemNum in item.starNum" v-bind:key="itemNum" src="../../static/starIcon.png" mode=""></image>
 						</view>
 						<view class="desCom">
 							<text>住的很舒适，啊手动阀手动阀按时发撒地方住的很舒适，啊手动阀手动阀按时发撒地方</text>
 						</view>
 						<view class="imgDis" >
-							<image v-for="itemImg in item.imgList" v-bind:key="item" :src="itemImg" mode="" ></image>
+							<image v-for="itemImg in item.imgList" v-bind:key="itemImg" :src="itemImg" mode="" ></image>
 						</view>
 					</view>
 				</view>
@@ -157,7 +158,9 @@
 						'../../static/assImg.png',
 						'../../static/assImg.png'
 					]}
-				]
+				],
+				storeInfo:[],
+				goodList:[]
 			}
 		},
 		methods: {
@@ -168,7 +171,26 @@
 				uni.navigateTo({
 					url:'../bookPage/bookPage'
 				})
+			},
+			getThisInfo(){
+				var that = this
+				uni.request({
+					url:that.baseUrl + 'Store/getProduct',
+					method:"GET",
+					data:{
+						longitude:that.globalData.location.latitude,
+						latitude:that.globalData.location.longitude,
+						store_id:10
+					},
+					success(res) {
+						that.storeInfo = res.data
+						that.goodList = res.data.goods
+					}
+				})
 			}
+		},
+		onShow() {
+			this.getThisInfo()
 		}
 	}
 </script>
@@ -290,7 +312,7 @@
 	}
 	.eachGoods{
 		width: 700upx;
-		margin: 20upx auto;
+		margin: 40upx auto;
 		height: 120upx;
 		overflow: hidden;
 	}
@@ -328,6 +350,10 @@
 	.rightBook .title{
 		font-size: 30upx;
 		font-weight: 700;
+		width: 80%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 	.rightBook .type{
 		font-size: 25upx;

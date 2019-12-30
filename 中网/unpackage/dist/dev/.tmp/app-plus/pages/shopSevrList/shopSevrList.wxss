@@ -53,6 +53,7 @@
 	left: 0;
 	top: 0rpx;
 	z-index: 1000;
+	padding-top: 30rpx;
 }
 .topImg{
 	width: 70rpx;
