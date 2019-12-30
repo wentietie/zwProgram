@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="divport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="rem.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="registerLogo">
+            <!-- <image src="../../static/image/myAPPIcon.png" mode="widthFix"></image> -->
+        </div>
+        <div class="inputdiv">
+            <div class="countName">
+                <input type="text" id="phoneNum" placeholder="请输入手机号" />
+            </div>
+            <div class="countName">
+                <input type="text" id="pwd1" password placeholder="请输入密码" />
+            </div>
+            <div class="countName">
+                <input type="text" id="pwd2" password placeholder="请确认密码" />
+            </div>
+            <div class="countName">
+                <input type="text" id="pushPhone" placeholder="请填写推荐人手机号(选填)" />
+            </div>
+            <div class="countName" style="position: relative;">
+                <input type="text" placeholder="请输入验证码" id="vcode" />
+                <text class="getCode" onclick="getVCode()">获取验证码</text>
+            </div>
+        </div>
+        <div class="loginNow" onclick="registerNow()">
+            <text>马上注册</text>
+        </div>
+        <div class="loginBottom">
+        </div>
+
+        <div class="registerNow">
+
+        </div>
+        <div class="registerNow" style="font-size: 20rem;margin-top: 20rem;">
+            <text>登录代表你已同意<text style="color: #FABF6F;">中网服务协议，隐私政策</text></text>
+        </div>
+    </div>
+
+    <script>
+        function getVCode() {
+            var phone = document.getElementById('phoneNum').value
+            $.ajax({
+                url: 'http://zhongwang.sdyilian.top/index.php/zwapi/login/vcode',
+                type: "POST",
+                header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                },
+                data: {
+                    mobile: phone
+                },
+                success: function (res) {
+                    var a = JSON.parse(res)
+                    alert(a.msg)
+                }
+            })
+        }
+        function registerNow() {
+            var phone = document.getElementById('phoneNum').value
+            var pwd1 = document.getElementById('pwd1').value
+            var pwd2 = document.getElementById('pwd2').value
+            var pushPhone = document.getElementById('pushPhone').value
+            var vode = document.getElementById('vcode').value
+            if (pushPhone != '' && pushPhone != 11) {
+                alert('请输入11位手机号')
+                return
+            }
+            if (pushPhone == '') {
+                pushPhone = '0'
+            }
+            $.ajax({
+                url: 'http://zhongwang.sdyilian.top/index.php/zwapi/login/register',
+                type: "POST",
+                header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                },
+                data: {
+                    mobile: phone,
+                    password1: pwd1,
+                    password2: pwd2,
+                    code: that.vCode,
+                    suggest: pushPhone
+                },
+                success: function (res) {
+                    a = JSON.parse(res)
+                    alert(a.msg)
+                }
+            })
+        }
+    </script>
+
+    <style>
+        input {
+            outline: none;
+            border: none;
+            width: 100%;
+        }
+
+        ::-webkit-input-placeholder {
+            font-size: 25rem;
+        }
+
+        .getCode {
+            position: absolute;
+            top: 40rem;
+            font-size: 25rem;
+            right: 30rem;
+            color: #EFD0A1;
+        }
+
+        .registerText {
+            position: fixed;
+            top: 50rem;
+            width: 730rem;
+            font-size: 30rem;
+            text-align: right;
+            z-index: 100000000;
+        }
+
+        .registerNow {
+            width: 100%;
+            text-align: center;
+            font-size: 25rem;
+            margin-top: 150rem;
+            color: #A5A5A5;
+        }
+
+        .wxIcon {
+            width: 120rem;
+            height: 120rem;
+            margin: 0 auto;
+        }
+
+        .wxIcon image {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .forgetPwd {
+            float: right;
+            color: #D2D2D2;
+        }
+
+        .phoneLogin {
+            float: left;
+            color: #FAC883;
+        }
+
+        .loginBottom {
+            width: 95%;
+            overflow: hidden;
+            font-size: 25rem;
+            margin: 20rem auto;
+        }
+
+        .loginNow {
+            width: 95%;
+            margin: 0 auto;
+            margin-top: 100rem;
+            font-size: 30rem;
+            color: white;
+            text-align: center;
+            line-height: 100rem;
+            background-color: #EFD0A1;
+            border-radius: 8rem;
+        }
+
+        .countName {
+            width: 100%;
+            border-bottom: 1rem solid #F1F1F1;
+            height: 100rem;
+        }
+
+        .countName input {
+            height: 100rem;
+            font-size: 30rem;
+        }
+
+        .inputdiv {
+            width: 95%;
+            margin: 40rem auto;
+        }
+
+        .content {
+            width: 100%;
+            padding-top: 1rem;
+        }
+
+        .registerLogo {
+            width: 110rem;
+            height: 110rem;
+            margin: 0 auto;
+            margin-top: 100rem;
+            border-radius: 20rem;
+            overflow: hidden;
+        }
+
+        .registerLogo image {
+            width: 110rem;
+            height: 110rem;
+            display: block;
+        }
+    </style>
+</body>
+
+</html>
