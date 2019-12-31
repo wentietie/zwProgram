@@ -4,12 +4,12 @@
 	margin: 0 auto;
 	color: #F0AB3F;
 	line-height: 30rpx;
-	margin-top: 10rpx;
+	margin-top: 20rpx;
 	margin-bottom: 20rpx;
 }
 .goodsTitle {
 	width: 90%;
-	height: 70rpx;
+	height: 60rpx;
 	margin: 0 auto;
 	font-size: 27rpx;
 	font-weight: 550;

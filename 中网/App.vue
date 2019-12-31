@@ -7,12 +7,12 @@
 				key: 'userInfo',
 				success(res){
 					uni.switchTab({
-						url: './pages/index/index'
+						url: '../pages/index/index'
 					});
 				},
 				fail() {
 					uni.redirectTo({
-						url: './pages/loginPage/loginPage'
+						url: '../pages/loginPage/loginPage'
 					});
 					uni.showModal({
 						content: '请登录',
@@ -28,12 +28,12 @@
 				key: 'userInfo',
 				success(res){
 					uni.switchTab({
-						url: './pages/index/index'
+						url: '../pages/index/index'
 					});
 				},
 				fail() {
 					uni.redirectTo({
-						url: './pages/loginPage/loginPage'
+						url: '../pages/loginPage/loginPage'
 					});
 					uni.showModal({
 						content: '请登录',

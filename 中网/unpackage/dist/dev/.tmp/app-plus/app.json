@@ -24,7 +24,8 @@
     "pages/myOrderList/myOrderList",
     "pages/myTeam/myTeam",
     "pages/mySuggest/mySuggest",
-    "pages/editInfo/editInfo"
+    "pages/editInfo/editInfo",
+    "pages/goodsInfo/goodsInfo"
   ],
   "window": {
     "navigationBarTextStyle": "black",

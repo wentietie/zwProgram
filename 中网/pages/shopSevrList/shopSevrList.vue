@@ -5,7 +5,7 @@
 				<image src="../../static/shopHeadImg.png" mode=""></image>
 			</view>
 			<view class="inputView">
-				<view class="location">
+				<view class="location" @click="changeType">
 					<text>定位</text>
 					<image src="../../static/downArrow.png" mode=""></image>
 				</view>
@@ -17,7 +17,7 @@
 		<view class="topSwiper">
 			<swiper style="width: 100%; height: 100%;" circular="true" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" previous-margin="80upx" next-margin="80upx">
 				<swiper-item style="width: 100%; height: 100%;" v-for="(item, index) in imgList" v-bind:key="index">
-					<image :src="item" mode=""></image>
+					<image :src="item.ad_url" mode=""></image>
 				</swiper-item>
 			</swiper>
 		</view>
@@ -43,17 +43,17 @@
 				<image src="../../static/shopHeadImg.png" mode=""></image>
 				<view class="midInfo">
 					<view class="shopName">
-						<text>甜甜圈</text>
+						<text>{{item.store_name}}</text>
 					</view>
-					<view class="shopType">
-						<text>高新区 | 甜点</text>
+					<view class="shopType" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;width: 80%;">
+						<text>{{item.store_address}}</text>
 					</view>
 					<view class="shopType" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;">
-						<text>阿斯蒂芬撒旦发射点发是豆腐干豆腐干发放给阿斯蒂芬撒旦发射点发是豆腐干豆腐干发放给</text>
+						<text>{{item.introduce}}</text>
 					</view>
 				</view>
 				<view class="distance">
-					<text>2.9km</text>
+					<text>{{item.juli}}km</text>
 				</view>
 			</view>
 		</view>
@@ -64,17 +64,22 @@
 	export default {
 		data() {
 			return {
-				imgList:[
-					'../../static/indexSwiper.png',
-					'../../static/indexSwiper.png',
-					'../../static/indexSwiper.png'
-				],
+				imgList:[],
 				storeList:[],
 				distanceType:'1'
 				
 			}
 		},
 		methods: {
+			changeType(){
+				if(this.distanceType == 1){
+					this.distanceType = 0
+					this.getShopList()
+				}else{
+					this.distanceType = 1
+					this.getShopList()
+				}
+			},
 			getShopHome(){
 				uni.navigateTo({
 					url:'../shopHome/shopHome'
@@ -86,10 +91,8 @@
 					url: that.baseUrl + 'index/sjlist',
 					data:{
 						type: that.distanceType,
-						// lat:that.globalData.location.latitude,
-						// lng:that.globalData.location.longitude,
-						lat:'36.67705538913664',
-						lng:'117.1184820693606',
+						lng:that.globalData.location.latitude,
+						lat:that.globalData.location.longitude,
 						user_id: that.globalData.userInfo.user_id
 					},
 					header: {
@@ -98,8 +101,9 @@
 					method:"POST",
 					success(res) {
 						// console.log(JSON.stringify(res.data))
-						console.log(res)
-						// that.storeList = res.data.data
+						// console.log(res)
+						that.storeList = res.data.data
+						that.imgList = res.data.swiper
 					}
 				})
 			},

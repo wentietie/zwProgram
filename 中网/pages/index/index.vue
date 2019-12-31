@@ -27,10 +27,10 @@
 		<view class="littleTabList">
 			<view class="eachLittleTab" v-for="(item, index) in littleTabList" v-bind:key="index">
 				<view class="tabTopIcon">
-					<image :src="item.icon" mode=""></image>
+					<image :src="item.images" mode=""></image>
 				</view>
 				<view class="tabBottomLabel">
-					<text>{{item.label}}</text>
+					<text>{{item.name}}</text>
 				</view>
 			</view>
 		</view>
@@ -74,12 +74,12 @@
 			<view class="shopList">
 				<view class="topList">
 					<view class="eachTopShop" v-for="(item, index) in eachTopShop" v-bind:key="index">
-						<image :src="item" mode=""></image>
+						<image :src="item.ad_url" mode=""></image>
 					</view>
 				</view>
 				<view class="topList" style="margin-top: 10upx;">
 					<view class="eachbottomShop" v-for="(item, index) in eachbottomShop" v-bind:key="index">
-						<image :src="item" mode=""></image>
+						<image :src="item.ad_url" mode=""></image>
 					</view>
 				</view>
 			</view>
@@ -89,15 +89,15 @@
 				<text>猜你喜欢</text>
 			</view>
 			<view class="shopList">
-				<view class="eachShopLike" v-for="(item, index) in eachShopLike" v-bind:key="index">
+				<view class="eachShopLike" v-for="(item, index) in eachShopLike" v-bind:key="index" @click="getGoodsInfo(item.goods_id)">
 					<view class="topShopImg">
-						<image :src="item.img" mode=""></image>
+						<image :src="item.original_img" mode=""></image>
 					</view>
 					<view class="goodsTitle">
-						<text>{{item.label}}</text>
+						<text>{{item.goods_name}}</text>
 					</view>
 					<view class="curGodsPrice">
-						<text style="font-size: 20upx;">￥</text><text style="font-size: 30upx;">{{item.price}}</text>
+						<text style="font-size: 20upx;">￥</text><text style="font-size: 30upx;">{{item.shop_price}}</text>
 					</view>
 				</view>
 			</view>
@@ -110,47 +110,7 @@
 		data() {
 			return {
 				topSwiper: [],
-				littleTabList: [{
-						icon: '../../static/litTab3.png',
-						label: '酒店'
-					},
-					{
-						icon: '../../static/litTab5.png',
-						label: '足疗'
-					},
-					{
-						icon: '../../static/litTab8.png',
-						label: '洗浴'
-					},
-					{
-						icon: '../../static/litTab6.png',
-						label: '娱乐'
-					},
-					{
-						icon: '../../static/litTab9.png',
-						label: '医美'
-					},
-					{
-						icon: '../../static/litTab2.png',
-						label: '婚纱'
-					},
-					{
-						icon: '../../static/litTab10.png',
-						label: '果蔬'
-					},
-					{
-						icon: '../../static/litTab1.png',
-						label: '丽人'
-					},
-					{
-						icon: '../../static/litTab4.png',
-						label: '家具'
-					},
-					{
-						icon: '../../static/litTab7.png',
-						label: '百货'
-					}
-				],
+				littleTabList: [],
 				eachTopShop: [
 					'../../static/topShop.png',
 					'../../static/topShop.png',
@@ -161,34 +121,18 @@
 					'../../static/bottomShop.png',
 					'../../static/bottomShop.png'
 				],
-				eachShopLike:[
-					{
-						img: '../../static/goodsImg.png',
-						label: '老板油烟机',
-						price: '56'
-					},
-					{
-						img: '../../static/goodsImg.png',
-						label: '老板油烟机老板油烟机老板油烟机',
-						price: '56'
-					},
-					{
-						img: '../../static/goodsImg.png',
-						label: '老板油烟机老板油烟机老板油烟机老板油烟机',
-						price: '56'
-					},
-					{
-						img: '../../static/goodsImg.png',
-						label: '老板油烟机老板油烟机老板油烟机老板油烟机老板油烟机老板油烟机',
-						price: '56'
-					}
-				]
+				eachShopLike:[]
 			}
 		},
 		onLoad() {
 			
 		},
 		methods: {
+			getGoodsInfo(id){
+				uni.navigateTo({
+					url:'../goodsInfo/goodsInfo?id='+id
+				})
+			},
 			applyCard(){
 				uni.navigateTo({
 					url:'../cardRecharge/cardRecharge'
@@ -214,7 +158,6 @@
 				uni.getLocation({
 				    type: 'wgs84',
 				    success: function (res) {
-						console.log('111')
 						uni.setStorage({
 							key : "location",
 							data: res,
@@ -223,7 +166,6 @@
 									key : 'location',
 									success(e) {
 										that.globalData.location = e.data
-										console.log(that.globalData.location)
 									}
 								})
 							}
@@ -244,6 +186,10 @@
 					},
 					success(resq) {
 						that.topSwiper =  resq.data.data.swiper
+						that.eachShopLike = resq.data.data.likeGoods
+						that.littleTabList = resq.data.data.homeClass
+						that.eachTopShop = resq.data.data.getStoreLike.top
+						that.eachbottomShop = resq.data.data.getStoreLike.bottom
 					}
 				})
 			},
@@ -282,14 +228,14 @@
 		margin: 0 auto;
 		color: #F0AB3F;
 		line-height: 30upx;
-		margin-top: 10upx;
+		margin-top: 20upx;
 		margin-bottom: 20upx;
 		
 	}
 
 	.goodsTitle {
 		width: 90%;
-		height: 70upx;
+		height: 60upx;
 		margin: 0 auto;
 		font-size: 27upx;
 		font-weight: 550;
